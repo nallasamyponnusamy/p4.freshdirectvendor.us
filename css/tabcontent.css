@@ -1,0 +1,54 @@
+.indentmenu {
+    font: bold 13px Arial;
+    width: 100%; /*leave this value as is in most cases*/
+    padding: 5px 0px 0px 0px;
+}
+
+.indentmenu ul {
+    margin: 0;
+    padding: 0;
+    float: left;
+    /* width: 80%; width of menu*/
+    border-top: 1px solid navy; /*navy border*/
+    background: black url(/customerservice_event_log/images/indentbg.gif) center center repeat-x;
+}
+
+.indentmenu ul li {
+    display: inline;
+}
+
+.indentmenu ul li a {
+    float: left;
+    color: white; /*text color*/
+    padding: 5px 11px;
+    text-decoration: none;
+    border-right: 1px solid navy; /*navy divider between menu items*/
+}
+
+.indentmenu ul li a:visited {
+    color: white;
+}
+
+.indentmenu ul li a.selected {
+    color: white !important;
+    padding-top: 6px; /*shift text down 1px*/
+    padding-bottom: 4px;
+    background: black url(/customerservice_event_log/images/indentbg2.gif) center center repeat-x;
+}
+
+.tabcontentstyle {
+    /*style of tab content oontainer*/
+    border: 1px solid gray;
+    width: 450px;
+    margin-bottom: 1em;
+    padding: 10px;
+}
+
+.tabcontent {
+    display: none;
+}
+
+@media print {
+    .tabcontent {
+        display: block !important;
+    }

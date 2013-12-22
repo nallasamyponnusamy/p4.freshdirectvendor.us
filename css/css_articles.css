@@ -1,0 +1,104 @@
+/*body{
+	background-repeat:no-repeat;
+	font-family: Tahoma,Verdana,Segoe,sans-serif;
+	font-size:0.9em;
+	line-height:130%;
+	text-align:center;
+	height:100%;
+	background-color: #E2EBED;
+}*/
+#contentContainer h2 {
+    /* No margins above <h2> tags */
+    margin-top: 0px;
+}
+
+#mainContainer {
+    width: 1170px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 5px;
+    /*margin-top:20px;*/
+    border: 1px solid #000;
+    background-color: #FFF;
+}
+
+#contentContainer {
+    float: right;
+    border: 1px solid #000;
+    background-color: #E2EBED;
+    overflow: auto;
+    margin-right: 10px;
+    padding: 10px;
+
+    /* CSS HACK */
+    width: 95%; /* IE 5.x */
+    width /* */: /**/ 850px; /* Other browsers */
+    width: /**/ 850px;
+
+    /* CSS HACK */
+    height: 582px; /* IE 5.x */
+    height /* */: /**/ 560px; /* Other browsers */
+    height: /**/ 560px;
+
+}
+
+#contentContainer .openingText {
+    color: red;
+}
+
+#articleListContainer {
+    /* <ul> container for article list */
+    float: right;
+    height: 580px;
+    overflow: auto;
+    width: 280px;
+    border: 1px solid #000;
+    background-color: #FFF;
+}
+
+.articleList {
+    margin: 0px;
+    padding: 2px;
+}
+
+.articleList li {
+    /* General layout article in list */
+    list-style-type: none;
+    border: 1px solid #999;
+    background-color: #EEE;
+    height: 50px;
+    margin: 1px;
+    padding: 2px;
+    color: #333;
+    cursor: pointer;
+}
+
+.articleList li.articleMouseOver {
+    /* Mouse over article in list - layout */
+    border: 1px solid #000;
+    color: #000;
+}
+
+.articleList li.articleClick {
+    /* Active article in list - layout */
+    border: 1px solid #000;
+    color: #000;
+    background-color: #317082;
+    color: #FFF;
+}
+
+.keyText {
+    /* Just a column I use for key text inside articles - the one with the light blue bg and dotted border */
+    background-color: #FFF;
+    border: 1px dotted #000;
+    float: left;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    width: 150px;
+    padding: 3px
+}
+
+.clear {
+    clear: both;
+}

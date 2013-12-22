@@ -1,11 +1,15 @@
-<p>
-	Hello World! You have successfully spawned a new application.
-</p>
+<br/>
+<blockquote>Thanks to Instructor Susan Buck MPS,Daniel Schultz,Johanna Bodnyk,Anibal Cruz,Alain Ibrahim,Quintin Marcus &
+    Xin Xin
+</blockquote>
+<h1>Welcome to Good Manufacturing Practice - Food Safety Inspection and Audit Log</h1>
+<h3>This is an online
+    <br><br>
 
-<p>
-	This message is being triggered via the c_index.php controller, within the index() method.
-</p>
+    <br><br>
 
-<p>
-	<strong>Since everything is in working order, you should now delete <?php echo APP_PATH?>diagnostics.php</strong>
-</p>
+
+    <br>
+
+    <br><br>
+</h3>
