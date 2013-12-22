@@ -13,13 +13,13 @@ $config = array(
 //"db_database" => $dbName,
 
     "db_host" => "localhost",
-<<<<<<< HEAD
-    "db_user" => "freshdir_p4",
-    "db_password" => "fresh123",
-=======
+
+//    "db_user" => "freshdir_p4",
+//    "db_password" => "fresh123",
+
     "db_user" => "root",
     "db_password" => "",
->>>>>>> 9ba83f1c5631819adc2bb7b28871bb0791a100f0
+
 //    "db_database" => $dbName,
     "db_database" => $dbName,
 
