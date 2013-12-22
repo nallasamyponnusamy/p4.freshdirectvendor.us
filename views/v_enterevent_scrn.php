@@ -63,7 +63,5 @@ if ((empty($DepartmentID)) || (empty($DepartmentGroup))) {
             echo '</table>';
         }
     }
-
-//	mysql_close($db);
 }
 ?>
