@@ -49,12 +49,10 @@ class posts_controller extends base_controller
     }
 
 
-    public function addEvent()
+    public function p_add()
     {
 
-        # Setup view
-        $this->template->content = View::instance('v_CreateEventlog');
-        $this->template->title = "Enter Events After Inspection";
+
 
         $q = '(SELECT "Non Production" AS isProduction
 							, DepartmentID AS DepartmentID
@@ -72,6 +70,9 @@ class posts_controller extends base_controller
 
         # Run the query, store the results in the variable $posts
         $posts = DB::instance(DB_NAME)->select_rows($q);
+        # Setup view
+        $this->template->content = View::instance('v_CreateEventlog');
+        $this->template->title = "Enter Events After Inspection";
         # Pass data to the View
         $this->template->content->posts = $posts;
         # Render template

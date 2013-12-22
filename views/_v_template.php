@@ -49,7 +49,7 @@
         <ul>
             <?php if ($user): ?>
                 <!-- Menu for users who are logged in -->
-                <li><a href='/posts/addEvent'>Inspection - Add an Event</a></li>
+                <li><a href='/posts/p_add'>Inspection - Add an Event</a></li>
                 <li><a href='/posts/overview'>Deficiency Overview</a></li>
                 <li><a href='/posts/users'>Search Deficiency</a></li>
                 <li><a href='/users/logout'>Logout</a></li>
@@ -83,7 +83,7 @@
                  alt="Valid CSS!"/>
         </a>
     </p>
-    Project 2 - CSCIE15
+    Project 4 - CSCIE15
 </footer>
 </html>
 
