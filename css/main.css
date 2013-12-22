@@ -1,0 +1,231 @@
+body {
+    font-size: 11px;
+    font-family: Arial Unicode MS;
+    background-color: #999;
+}
+
+input {
+    font-size: 11px;
+    font-family: Arial Unicode MS;
+    width: 200px;
+}
+
+textarea {
+    font-size: 11px;
+    font-family: Arial Unicode MS;
+    width: 200px;
+    border: 1px solid #999;
+}
+
+select {
+    font-size: 11px;
+    font-family: Arial Unicode MS;
+    width: 206px
+}
+
+h3 {
+    text-decoration: underline;
+}
+
+#warning {
+    text-align: left;
+    padding: 0px 0px 5px 5px;
+    color: #FF0000;
+}
+
+#warningSymbol {
+    color: #F00;
+}
+
+.fieldsDiv {
+    border-top: 1px #999999 solid;
+    border-bottom: 1px #999999 solid;
+    overflow: auto;
+}
+
+.fieldName {
+    float: left;
+    width: 175px;
+    padding: 8px 0px 8px 5px;
+    text-align: left;
+}
+
+.fieldInput {
+    float: left;
+    width: 320px;
+    padding: 8px 0px 8px 5px;
+    text-align: left;
+}
+
+#mainContent {
+    /*width: 500px;*/
+    height: 455px;
+    border: 1px #000000 solid;
+    background-color: #FFF;
+    margin: 10px 0px 0px 0px;
+    overflow: auto;
+}
+
+.submitButtonDiv {
+    padding: 10px 0px 0px 0px;
+    height: 30px;
+    background-color: #333;
+    color: #FFF;
+}
+
+a.errorEmailLink:link, a.errorEmailLink:active, a.errorEmailLink:visited {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.errorEmailLink:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#refreshLink {
+    font-size: 14px;
+    padding: 5px 0px;
+    background-color: #E9E9E9;
+}
+
+.notice {
+    font-size: 11px;
+    text-align: left;
+    padding: 0px 0px 0px 5px;
+}
+
+.notice h3 {
+    font-size: 11px;
+    text-decoration: none;
+}
+
+/* Loading box of width=height=100px with a spinner placed at the center */
+#loading {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    background: url(../images/spinner3-black.gif) no-repeat center #fff;
+    text-align: center;
+    padding: 10px;
+    font: normal 16px Tahoma, Geneva, sans-serif;
+    border: 1px solid #666;
+    margin-left: -50px;
+    margin-top: -50px;
+    z-index: 2;
+    overflow: auto;
+}
+
+#messageDiv {
+    float: left;
+    width: 150px;
+}
+
+.note-bar {
+    display: none;
+    overflow: hidden;
+    background: #900;
+    width: 100px;
+    height: 27px;
+    /*border-bottom: 4px solid #fff;
+    position: absolute;*/
+    margin: 0px 5px 0px 0px;
+    float: right;
+}
+
+.note-bar p {
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 25px;
+    margin: 0 0 0 10px;
+    padding: 0;
+    text-shadow: none;
+}
+
+.error-note-bar {
+    display: none;
+    overflow: hidden;
+    background: #900;
+    width: 325px;
+    height: 27px;
+    /*border-bottom: 4px solid #fff;
+    position: absolute;
+    float: right;*/
+    margin: 0px 5px 0px 350px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.error-note-bar p {
+    color: #FFFFFF;
+    font-size: 11px;
+    /*font-weight: bold;*/
+    line-height: 25px;
+    margin: 0px 5px 0px 5px;
+    padding: 0px;
+    text-shadow: none;
+    text-align: left;
+}
+
+.success-note-bar {
+    display: none;
+    overflow: hidden;
+    background: #093;
+    width: 225px;
+    height: 27px;
+    /*border-bottom: 4px solid #fff;
+    position: absolute;
+    float: right;*/
+    margin: 0px 1px 0px 400px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.success-note-bar p {
+    color: #FFFFFF;
+    font-size: 11px;
+    /*font-weight: bold;*/
+    line-height: 25px;
+    margin: 0px 5px 0px 5px;
+    padding: 0px;
+    text-shadow: none;
+    text-align: left;
+}
+
+.characterLimitAlert {
+    color: red;
+}
+
+a.addLinks:link, a.addLinks:visited, a.addLinks:active {
+    text-decoration: none;
+    color: #F00;
+    font-weight: bold;
+}
+
+a.addLinks:hover {
+    color: #F00;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a.returnLinks:link, a.returnLinks:visited, a.returnLinks:active {
+    text-decoration: none;
+    color: #FFF;
+    font-weight: bold;
+}
+
+a.returnLinks:hover {
+    color: #FFF;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.heading {
+    padding: 10px 0px 10px 0px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}

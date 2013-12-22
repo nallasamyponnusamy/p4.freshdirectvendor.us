@@ -1,0 +1,501 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+    outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+    text-decoration: none;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Reset for HTML 5 Elements
+----------------------------------------------------------------------------------------------------*/
+
+/* tells browsers that don't read html 5 tags to render like divs */
+header, footer, aside, nav, article, section {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* clears containers with floated elements, no need for extra markup! */
+.clear:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/* Type
+----------------------------------------------------------------------------------------------------*/
+
+html {
+    font-size: 16px;
+}
+
+body {
+    color: #333;
+    font: 75%/1.5em Georgia, "Times New Roman", Times, serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #666;
+    font: 1.9em/1em Georgia, "Times New Roman", Times, serif;
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.35em;
+}
+
+h5 {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+p {
+    color: #666;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 1em;
+    line-height: 1.7em;
+    text-align: left;
+}
+
+blockquote {
+    font-style: italic;
+    font-weight: bold;
+}
+
+ul {
+    list-style: disc;
+    color: #555;
+    font-size: 1.0em;
+    font-weight: normal;
+    line-height: 1.3em;
+}
+
+ol, ol.lowerRoman, ol.upperAlpha {
+    list-style: decimal;
+    color: #555;
+    font-size: 1.0em;
+    font-weight: normal;
+    line-height: 1.3em;
+}
+
+ol.lowerRoman {
+    list-style: lower-roman;
+}
+
+ol.upperAlpha {
+    list-style: upper-alpha;
+}
+
+strong, b, .b {
+    color: #555 !important;
+    font-weight: bold;
+}
+
+a {
+    color: #555;
+    text-decoration: none;
+}
+
+/*a:link {
+	color: #555;
+	outline: none;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #555;
+	outline: none;
+	text-decoration: none;
+}*/
+
+a:hover {
+    color: #555;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #555;
+    outline: none;
+    text-decoration: none;
+}
+
+a:focus {
+    outline: 1px dotted;
+}
+
+/* Spacing
+----------------------------------------------------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6 {
+    padding-bottom: 3px;
+}
+
+h3 {
+    padding-top: 10px;
+}
+
+hr {
+    border: 0 #ccc solid;
+    border-top-width: 1px;
+    clear: both;
+    height: 0;
+}
+
+p {
+    margin-right: 10px;
+    padding: 5px 0;
+}
+
+blockquote {
+    margin-right: 10px;
+    padding: 5px 0 20px 0;
+}
+
+ul, ol {
+    margin-left: 25px;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset {
+    margin-bottom: 10px;
+}
+
+/* Layout
+----------------------------------------------------------------------------------------------------*/
+
+html {
+    background: url(../images/background.png) repeat;
+    padding: 0 0 40px;
+    text-align: center;
+}
+
+body {
+    margin-bottom: 20px;
+    width: 1200px;
+    margin: 0 auto;
+    border: none;
+}
+
+header {
+    background-image: url(../images/header_bg.png);
+    height: 179px;
+    width: 100%;
+}
+
+header h1 {
+    float: left;
+    font-size: 1.4em;
+    line-height: 2em;
+    text-transform: capitalize;
+    text-align: left;
+    margin-top: 0px;
+    margin-left: 40px;
+    border: none;
+}
+
+header h1 a {
+    background: url(../images/logo_img.png) no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    padding-right: 100px;
+    padding-left: 0px;
+    padding-top: 115px;
+    height: 30px;
+}
+
+header h2 {
+    color: #333;
+    float: right;
+    font-size: 1.8em;
+    line-height: 1.2em;
+    margin-top: 20px;
+    padding-bottom: 5px;
+    width: 560px;
+    text-align: left;
+    border-bottom: 4px double #dedbac;
+}
+
+#mainContent {
+    background-image: url(../images/body_bg.png);
+    clear: both;
+    margin: 30px 0px 30px 0px;
+    padding: 20px;
+    min-height: 360px;
+    border-top: 1px solid #85a32f;
+    border-bottom: 1px solid #85a32f;
+}
+
+nav {
+    background: url(../images/nav_bg.png) no-repeat;
+    float: right;
+    padding-top: 64px;
+    padding-bottom: 56px;
+    width: 350px;
+    text-align: left;
+}
+
+.userName, .userNameGuest {
+
+    color: red;
+    font-weight: bolder;
+    font-size: 1.6em;
+    text-align: center;
+    width: 200px;
+}
+
+.follow {
+    color: red;
+    font-size: 1.3em;
+}
+
+.unfollow {
+    color: darkgreen;
+    font-size: 1.3em;
+}
+
+.farmer {
+    color: darkolivegreen;
+}
+
+.blog {
+    color: orangered;
+}
+
+.userNameGuest {
+    color: #992b04;
+    font-size: 1.8em;
+}
+
+li.even {
+    background-color: #dedbac;
+    /*color:#85a32f ;*/
+}
+
+li.odd {
+    background-color: #cccccc;
+    /*color:#3FF;*/
+}
+
+nav h3 {
+    color: #333;
+    font-weight: bolder;
+    font-size: 1.3em;
+    margin: 0 15px;
+    padding: 4px;
+    width: 200px;
+    /*text-align: center;*/
+    /*border-bottom: 4px double #85a32f;*/
+}
+
+nav h4 {
+    color: #333;
+    font-weight: bolder;
+    font-size: 1.3em;
+    margin: 0 15px;
+    padding: 4px;
+    text-align: center;
+    border-bottom: 4px double #85a32f;
+}
+
+nav ul {
+    list-style: none;
+    width: 200px;
+    margin-left: 0;
+    padding-top: 0px;
+    border: none;
+}
+
+nav ul li {
+    display: block;
+    margin: 0 15px;
+    padding: 8px 0;
+    border-bottom: 1px solid #85a32f;
+}
+
+nav ul li:hover {
+    background-color: #85a32f;
+}
+
+nav ul li a {
+    font-size: 1.2em;
+    padding: 7px 90px 10px 0px;
+    border: none;
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
+
+#mainRight, #mainRight2 {
+    float: right;
+    /*width: 650px;*/
+    width: 100%;
+    text-align: left;
+    height: 550px;
+    overflow: scroll;
+}
+
+#mainRight h1 {
+    color: #333;
+    margin-bottom: 20px;
+    border: none;
+}
+
+#mainRight h2 {
+    font-size: 1.2em;
+    margin: 0;
+    padding-top: 10px;
+    text-transform: uppercase;
+}
+
+.error {
+    color: red;
+    font-weight: bolder;
+    font-size: 1.8em;
+}
+
+.errorSmall {
+    color: red;
+    font-weight: bolder;
+    font-size: 1.3em;
+}
+
+.successSmall {
+    color: darkolivegreen;
+    font-weight: bolder;
+    font-size: 1.3em;
+}
+
+#mainRight h3 {
+    font-size: 1.2em;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.colLeft {
+    float: left;
+    width: 250px;
+    border: none;
+}
+
+.colRight {
+    float: right;
+    width: 300px;
+    border: none;
+}
+
+.colRight img {
+    border: none;
+    margin-bottom: 20px;
+}
+
+footer {
+    clear: both;
+    float: right;
+    width: 560px;
+    padding-right: 20px;
+    border-top: 1px solid #56563a;
+
+}
+
+footer p {
+    float: left;
+    font-size: 0.9em;
+}
+
+footer ul {
+    float: left;
+    list-style: none;
+    width: 580px;
+    margin-left: 0;
+    padding-top: 5px;
+    text-align: left;
+    border-top: 1px solid #56563a;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 5px;
+    border: none;
+}
+
+footer ul li a {
+    font-size: 0.9em;
+}
+
+footer ul li a:hover {
+    color: #000;
+}
