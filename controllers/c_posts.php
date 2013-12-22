@@ -13,7 +13,40 @@ class posts_controller extends base_controller
     }
 
 
+    public function overview()
+    {
 
+        #public function index() {
+
+        # Set up the View
+        $this->template->content = View::instance('v_deficiency_overview');
+        $this->template->title = "All Posts";
+
+//        # Query
+//        $q = '(SELECT "Non Production" AS isProduction
+//							, DepartmentID AS DepartmentID
+//							, DepartmentName AS DepartmentName
+//						FROM NonProductionDepartmentList
+//						WHERE isActive = 1
+//						ORDER BY DepartmentName)
+//						UNION
+//						(SELECT "Production" AS isProduction
+//							, DepartmentID AS DepartmentID
+//							 , DepartmentName AS DepartmentName
+//						FROM ProductionDepartmentList
+//						WHERE isActive = 1
+//						ORDER BY DepartmentName);';
+//
+//        # Run the query, store the results in the variable $posts
+//        $sqlDepartmentList = DB::instance(DB_NAME)->select_rows($q);
+//
+//        # Pass data to the View
+//        $this->template->content->$$sqlDepartmentList = $sqlDepartmentList;
+
+        # Render the View
+        echo $this->template;
+
+    }
 
 
     public function add()
@@ -199,7 +232,23 @@ class posts_controller extends base_controller
         if ((empty($CreatedBy)) || (empty($DepartmentGroup)) || (empty($DepartmentID))) {
             echo '*** ERROR (MP) ***';
         } else {
-
+//    // specify DB name
+//    $dbName= "freshdir_p4_freshdirectvendor_us" ;
+//
+//    // include DB connection settings
+//    require_once "config.php";
+//    require_once "class.mysql.php";
+//    $db = new mysql();
+//    # Prepare the data array to be inserted
+//    $data = Array(
+//        "created" => Time::now(),
+//        "user_id" => $this->user->user_id,
+//        "user_id_followed" => $user_id_followed
+//    );
+//
+//    # Do the insert
+//    DB::instance(DB_NAME)->insert('users_users', $data);
+//
 
             $data = Array(
                 "DepartmentID" => $DepartmentID,
@@ -259,6 +308,17 @@ class posts_controller extends base_controller
                             case 0:
                                 $DeficiencyCorrectiveActions = htmlspecialchars(urldecode($value), ENT_QUOTES, "UTF-8");
 
+//                        $sqlCreateNewDeficiencyRecord = 'INSERT INTO '.$DepartmentGroup.'DeficienciesLog(
+//														'.$DepartmentGroup.'InspectionLogID
+//														,'.$DepartmentGroup.'DeficiencyID
+//														,Comments
+//														,CorrectiveActions)
+//													VALUES ('.$LastInsertID.'
+//														,'.$DeficiencyID.'
+//														,"'.$DeficiencyComments.'"
+//														,"'.$DeficiencyCorrectiveActions.'")';
+//Ponnu
+
                                 $data = Array(
                                     "NonProductionInspectionLogID" => $LastInsertID,
                                     "NonProductionDeficiencyID" => $DeficiencyID,
@@ -288,11 +348,12 @@ class posts_controller extends base_controller
             }
 
             if (!empty($isSuccess)) {
-
+                // include send email code
+                //include_once( 'export.php' );
             }
             echo $isSuccess;
 
-
+//	mysql_close($db);
         }
 
 
@@ -303,16 +364,179 @@ class posts_controller extends base_controller
     public function index()
     {
 
+        #public function index() {
+
         # Set up the View
         $this->template->content = View::instance('v_deficiency_overview');
         $this->template->title = "Deficiency Overview List";
 
-
+//        # Query
+////        $q = 'SELECT
+////                posts.post_id,
+////                posts.content,
+////                posts.created,
+////                posts.user_id AS post_user_id,
+////                users_users.user_id AS follower_id,
+////                users.first_name,
+////                users.last_name
+////            FROM posts
+////            INNER JOIN users_users
+////                ON posts.user_id = users_users.user_id_followed
+////            INNER JOIN users
+////                ON posts.user_id = users.user_id
+////            WHERE users_users.user_id = '.$this->user->user_id;
+//
+//        //        # Query
+//        $q = '(SELECT "Non Production" AS isProduction
+//							, DepartmentID AS DepartmentID
+//							, DepartmentName AS DepartmentName
+//						FROM NonProductionDepartmentList
+//						WHERE isActive = 1
+//						ORDER BY DepartmentName)
+//						UNION
+//						(SELECT "Production" AS isProduction
+//							, DepartmentID AS DepartmentID
+//							 , DepartmentName AS DepartmentName
+//						FROM ProductionDepartmentList
+//						WHERE isActive = 1
+//						ORDER BY DepartmentName);';
+//
+//        # Run the query, store the results in the variable $posts
+//        $sql_DepartmentLists = DB::instance(DB_NAME)->select_rows($q);
+//
+//        # Pass data to the View
+//        $this->template->content->sqlDepartmentListResults = $sql_DepartmentLists;
+//
+////        # Run the query, store the results in the variable $posts
+////        $posts = DB::instance(DB_NAME)->select_rows($q);
+////
+////        # Pass data to the View
+////        $this->template->content->posts = $posts;
+//
+//        # Render the View
+//        echo $this->template;
 
     }
 
 
+//    public function users()
+//    {
+////
+////        # Set up the View
+////        $this->template->content = View::instance("v_posts_users");
+////        $this->template->title = "Users";
+////
+////        # Build the query to get all the users
+////        $q = "SELECT *
+////            FROM users";
+////
+////        # Execute the query to get all the users.
+////        # Store the result array in the variable $users
+////        $users = DB::instance(DB_NAME)->select_rows($q);
+////
+////        # Build the query to figure out what connections does this user already have?
+////        # I.e. who are they following
+////        $q = "SELECT *
+////            FROM users_users
+////            WHERE user_id = " . $this->user->user_id;
+////
+////        # Execute this query with the select_array method
+////        # select_array will return our results in an array and use the "users_id_followed" field as the index.
+////        # This will come in handy when we get to the view
+////        # Store our results (an array) in the variable $connections
+////        $connections = DB::instance(DB_NAME)->select_array($q, 'user_id_followed');
+////
+////        # Pass data (users and connections) to the view
+////        $this->template->content->users = $users;
+////        $this->template->content->connections = $connections;
+////
+////        # Render the view
+////        echo $this->template;
+//    }
+//
+//    public function follow($user_id_followed)
+//    {
+//
+////        # Prepare the data array to be inserted
+////        $data = Array(
+////            "created" => Time::now(),
+////            "user_id" => $this->user->user_id,
+////            "user_id_followed" => $user_id_followed
+////        );
+////
+////        # Do the insert
+////        DB::instance(DB_NAME)->insert('users_users', $data);
+////
+////        # Send them back
+////        Router::redirect("/posts/users");
+//
+//    }
+//
+//    public function unfollow($user_id_followed)
+//    {
+//
+//        # Delete this connection
+//        $where_condition = 'WHERE user_id = ' . $this->user->user_id . ' AND user_id_followed = ' . $user_id_followed;
+//        DB::instance(DB_NAME)->delete('users_users', $where_condition);
+//
+//        # Send them back
+//        Router::redirect("/posts/users");
+//
+//    }
+//
+//    /*------------------------------------------------------------------------------------------
+//     delete post
+//*/
+//    public function delete($post_id)
+//    {
+//
+//        DB::instance(DB_NAME)->delete('posts', 'WHERE post_id =' . $post_id);
+//
+//        # Send them back to the homepage
+//        Router::redirect('/posts');
+//    }
+//
+//    /*---------------------------------------------------------------------------------------------
+//           edit post view
+//    */
+//
+//    public function edit($post_id)
+//    {
+//        # Set up view
+//        $this->template->content = View::instance("v_posts_edit");
+//
+//        # Set up query to get all users
+//        $q = 'SELECT * FROM posts where post_id = ' . $post_id;
+//
+//        # Run query
+//        $post = DB::instance(DB_NAME)->select_row($q);
+//
+//
+//        # Pass data to the view
+//        $this->template->content->post = $post;
+//
+//        # Render view
+//        echo $this->template;
+//
+//    }
 
+//    /*---------------------------------------------------------------------------------------------
+//           edit post view
+//    */
+//    public function p_edit($post_id)
+//    {
+//
+//        $content = $_POST['content'];
+//
+//        # Update their row in the DB with the new token
+//        $data = Array(
+//            'content' => $content
+//        );
+//
+//        DB::instance(DB_NAME)->update('posts', $data, 'WHERE post_id =' . $post_id);
+//        Router::redirect('/posts/');
+//
+//    }
 
 
     #Public function with deficiency_view
@@ -471,164 +695,8 @@ class posts_controller extends base_controller
                     </table>
                     <?php
                     break;
-
-                default:
-                    $sqlDisplayEventLog = 'SELECT PIL.ProductionInspectionLogID AS EventLogID
-								, PDL.DepartmentName AS DepartmentName
-								, AU.EmployeeName AS CreatedBy
-								, PDEFLST.ProductionDeficiencyRiskFactor AS RiskFactor
-								, COALESCE(PDEFLST.ProductionDeficiencyName, NULL, "No Deficiencies Found!") AS DeficiencyName
-								, COALESCE(PDEFL.Comments, NULL, "N/A") AS Comments
-								, COALESCE(PDEFL.CorrectiveActions, NULL, "N/A") AS CorrectiveActions
-								, COALESCE(PDEFL.ProductionInspectionLogID, NULL, "N/A") AS DeficiencyInspectionLogID
-								, PIL.DateCreated AS DateCreated
-								, CD.CDCD AS CDCD
-								, COALESCE(PDEFLST.ProductionDeficiencyScore, NULL, 0) AS DeficiencyScore
-								, TS.TotalScore AS TotalScore
-							FROM ProductionInspectionLog AS PIL
-								LEFT JOIN ProductionDepartmentList AS PDL ON (PDL.DepartmentID = PIL.DepartmentID)
-								LEFT JOIN AuthUsers AS AU ON (PIL.AuthUserID = AU.AuthUserID)
-								LEFT JOIN ProductionDeficienciesLog AS PDEFL ON (PDEFL.ProductionInspectionLogID = PIL.ProductionInspectionLogID)
-								LEFT JOIN ProductionDeficienciesList AS PDEFLST ON (PDEFLST.ProductionDeficiencyID = PDEFL.ProductionDeficiencyID)
-						          LEFT JOIN (SELECT DAC.DepartmentID AS DepartmentID
-											, SUM(ProductionDeficiencyScore) AS TotalScore
-										FROM ProductionDepartmentAuditChecklist AS DAC
-											LEFT JOIN ProductionDeficienciesList AS DL ON ((DAC.ProductionDeficiencyID = DL.ProductionDeficiencyID) AND DL.isActive = 1)
-										GROUP BY DAC.DepartmentID) AS TS ON (TS.DepartmentID = PIL.DepartmentID)
-								LEFT JOIN (SELECT a.ProductionInspectionLogID AS CDID
-											, a.DepartmentID AS CDDept
-											, a.ProductionDeficiencyID AS CDDI
-											/*, DATE(a.DateCreated) as ADateCreated
-											, DATE(b.DateCreated) as BDateCreated*/
-											, IF((b.Num IS NOT NULL), (@a := @a + 1), @a := 1) AS CDCD
-										FROM
-										(SELECT @a := 0) AS t,
-										(SELECT DISTINCT mu.ProductionDeficiencyID
-											, DATE(mu.DateCreated) as DateCreated
-											, mu.ProductionInspectionLogID
-											, m.DepartmentID
-											/*, DATEDIFF(mu.DateCreated, b.DateCreated) AS Num*/
-										FROM ProductionDeficienciesLog mu
-											LEFT JOIN ProductionInspectionLog m ON m.ProductionInspectionLogID = mu.ProductionInspectionLogID
-										ORDER BY m.DepartmentID, mu.ProductionDeficiencyID, mu.DateCreated) AS a
-										LEFT JOIN (SELECT DISTINCT mu.ProductionDeficiencyID
-													, DATE(mu.DateCreated) as DateCreated
-													, mu.ProductionInspectionLogID
-													, m.DepartmentID
-													, IF(DATE(mu.DateCreated) IS NULL, 0, 1) AS Num
-												FROM ProductionDeficienciesLog mu
-													LEFT JOIN ProductionInspectionLog m ON m.ProductionInspectionLogID = mu.ProductionInspectionLogID) AS b
-													ON ((b.ProductionDeficiencyID = a.ProductionDeficiencyID) AND (a.DepartmentID = b.DepartmentID) AND (a.DateCreated = b.DateCreated + INTERVAL 1 DAY))) AS CD ON ((CD.CDID = PIL.ProductionInspectionLogID)
-																									AND (CD.CDDept = PIL.DepartmentID)
-																									AND (CD.CDDI = PDEFLST.ProductionDeficiencyID))
-							WHERE (PIL.DateCreated > DATE_SUB(curdate(), INTERVAL 30 DAY))
-							ORDER BY PIL.ProductionInspectionLogID DESC, PDEFL.ProductionInspectionLogID;';
-
-                    if (!($sqlDisplayEventLogResults = $db->query($sqlDisplayEventLog))) {
-//                            die('<div class="notice"><h3>Error: ' . mysql_error() . '<br /><br /><br />Please contact your <a href="mailto:' . $dbAdminInfo . '" class="errorEmailLink">database administrator</a> indicating the above error.</h3></div>');
-                    } else {
-                        // check if row is returned, if yes error, if no get values
-                        if ($db->numRows($sqlDisplayEventLogResults) == 0) {
-//                                echo '<div class="notice"><h3>No Data was returned....<br /><br /><br />Please contact your <a href="mailto:' . $dbAdminInfo . '" class="errorEmailLink">database administrator</a> if you believe this is an error.</h3></div>';
-                        } else {
-                            ?>
-                            <table class="tablesorter">
-                            <thead>
-                            <tr>
-                                <th style="width: 70px;">Inspection Date</th>
-                                <th style="width: 70px;">Created By</th>
-                                <th style="width: 75px;">Department</th>
-                                <th style="width: 25px;">Risk</th>
-                                <th style="width: 200px;">Deficiency</th>
-                                <th style="width: 200px;">Comments</th>
-                                <th style="width: 200px;">Corrective Action(s)</th>
-                                <th style="width: 25px; text-align: center;">%</th>
-                                <th style="width: 25px; text-align: center;">Days</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                        <?php
-                        $i = 0;
-                        while ($rowDisplayEventLog = mysql_fetch_array($sqlDisplayEventLogResults))
-                        {
-                        $i++;
-
-                        if ($rowDisplayEventLog['DeficiencyInspectionLogID'] <> $CurrentID)
-                        {
-                        if (!empty($CurrentID))
-                        {
-                        ?>
-                            <script type="text/javascript">
-                                var html = '<?php echo number_format(100-(($sumOfDefiecencies/$totalSumOfDefiecencies)*100),0); ?>';
-                                $("#evtID<?php echo $CurrentID; ?>").html(html);
-                                $("#evtID<?php echo $CurrentID; ?>").css('font-weight', 'bold').css('text-align', 'center');
-                            </script>
-                        <?php
-                        }
-
-                        $CurrentID = $rowDisplayEventLog['EventLogID'];
-                        $sumOfDefiecencies = 0;
-                        $isAltClass = 'class="altTD"';
-                        $isEvtID = 'id="evtID' . $CurrentID . '"';
-                        $sumOfDefiecencies = $rowDisplayEventLog["DeficiencyScore"];
-                        $totalSumOfDefiecencies = $rowDisplayEventLog["TotalScore"];
-                        } else {
-                            $isAltClass = 'class="normTD"';
-                            $isEvtID = '';
-                            $sumOfDefiecencies += $rowDisplayEventLog["DeficiencyScore"];
-                        }
-
-                        echo "<tr>";
-
-                        $isConsecutiveDays = (empty($rowDisplayEventLog["RiskFactor"])) ? 0 :
-                            (((empty($rowDisplayEventLog["CDCD"]))) ? 1 : $rowDisplayEventLog["CDCD"]);
-
-                        echo '<td ' . $isAltClass . '>' . date("m.d.Y", strtotime($rowDisplayEventLog["DateCreated"])) . '</td>';
-                        echo '<td ' . $isAltClass . '>' . $rowDisplayEventLog["CreatedBy"] . '</td>';
-                        echo '<td ' . $isAltClass . '>' . $rowDisplayEventLog["DepartmentName"] . '</td>';
-                        echo '<td ' . $isAltClass . '>' . $rowDisplayEventLog["RiskFactor"] . '</td>';
-                        echo '<td ' . $isAltClass . '>' . $rowDisplayEventLog["DeficiencyName"] . '</td>';
-                        echo '<td ' . $isAltClass . '>' . nl2br($rowDisplayEventLog["Comments"]) . '</td>';
-                        echo '<td ' . $isAltClass . '>' . nl2br($rowDisplayEventLog["CorrectiveActions"]) . '</td>';
-                        echo '<td ' . $isAltClass . ' ' . $isEvtID . '></td>';
-                        echo '<td ' . $isAltClass . ' style="text-align: center; font-weight: bold;">' . $isConsecutiveDays . '</td>';
-
-                        echo '</tr>';
-
-                        if ($i == $db->numRows($sqlDisplayEventLogResults))
-                        {
-                        ?>
-                            <script type="text/javascript">
-                                var html = '<?php echo number_format(100-(($sumOfDefiecencies/$totalSumOfDefiecencies)*100),0); ?>';
-                                $("#evtID<?php echo $CurrentID; ?>").html(html);
-                                $("#evtID<?php echo $CurrentID; ?>").css('font-weight', 'bold').css('text-align', 'center');
-                            </script>
-                        <?php
-                        }
-                        }
-                        }
-                    }
-                    ?>
-                        </tbody>
-                        </table>
-                    <?php
-                    break;
-            }
+                   }
         }
-    }
-
-    public function overview()
-    {
-
-        #public function index() {
-
-        # Set up the View
-        $this->template->content = View::instance('v_deficiency_overview');
-        $this->template->title = "All Posts";
-
-        # Render the View
-        echo $this->template;
-
     }
 
 }#End of Class posts_controller
