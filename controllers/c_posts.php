@@ -612,23 +612,23 @@ class posts_controller extends base_controller
 //                    }
 //                    $sqlDisplayEventLogResults = $posts;
 
-                    ?>
-                    <table class="tablesorter">
-                        <thead>
-                        <tr>
-                            <th style="width: 70px;">Inspection Date</th>
-                            <th style="width: 70px;">Created By</th>
-                            <th style="width: 75px;">Department</th>
-                            <th style="width: 25px;">Risk</th>
-                            <th style="width: 200px;">Deficiency</th>
-                            <th style="width: 200px;">Comments</th>
-                            <th style="width: 200px;">Corrective Action(s)</th>
-                            <th style="width: 25px; text-align: center;">%</th>
-                            <th style="width: 25px; text-align: center;">Days</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php
+                    ?><?php
+                    echo '<table class="tablesorter">';
+                      echo   "<thead>";
+                      echo   "<tr>";
+                        echo    ' <th style="width: 70px;">Inspection Date</th>';
+                         echo    '<th style="width: 70px;">Created By</th>';
+                            echo '<th style="width: 75px;">Department</th>';
+                            echo '<th style="width: 25px;">Risk</th>';
+                            echo '<th style="width: 200px;">Deficiency</th>';
+                            echo '<th style="width: 200px;">Comments</th>';
+                           echo  '<th style="width: 200px;">Corrective Action(s)</th>';
+                            echo '<th style="width: 25px; text-align: center;">%</th>';
+                            echo  '<th style="width: 25px; text-align: center;">Days</th>';
+                        echo  "</tr>";
+                       echo  " </thead>";
+                        echo  "<tbody>";
+
                         $i = 0;
                         $CurrentID = '';
                         foreach ($sqlDisplayEventLogResults as $rowDisplayEventLog):
