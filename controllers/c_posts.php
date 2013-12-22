@@ -49,7 +49,7 @@ class posts_controller extends base_controller
     }
 
 
-    public function add()
+    public function addEvent()
     {
 
         # Setup view
@@ -80,25 +80,25 @@ class posts_controller extends base_controller
     }
 
 
-    public function p_add()
-    {
-
-        # Associate this post with this user
-        $_POST['user_id'] = $this->user->user_id;
-
-        # Unix timestamp of when this post was created / modified
-        $_POST['created'] = Time::now();
-        $_POST['modified'] = Time::now();
-
-        # Insert
-        # Note we didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
-        DB::instance(DB_NAME)->insert('posts', $_POST);
-
-        # Quick and dirty feedback
-        //echo "Your post has been added. <a href='/posts/add'>Add another</a>";
-        # Send them back
-        Router::redirect("/posts/index");
-    }
+//    public function p_add()
+//    {
+//
+//        # Associate this post with this user
+//        $_POST['user_id'] = $this->user->user_id;
+//
+//        # Unix timestamp of when this post was created / modified
+//        $_POST['created'] = Time::now();
+//        $_POST['modified'] = Time::now();
+//
+//        # Insert
+//        # Note we didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
+//        DB::instance(DB_NAME)->insert('posts', $_POST);
+//
+//        # Quick and dirty feedback
+//        //echo "Your post has been added. <a href='/posts/add'>Add another</a>";
+//        # Send them back
+//        Router::redirect("/posts/index");
+//    }
 
 
     public function p_addevent()

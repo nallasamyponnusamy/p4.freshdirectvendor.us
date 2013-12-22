@@ -49,7 +49,7 @@
         <ul>
             <?php if ($user): ?>
                 <!-- Menu for users who are logged in -->
-                <li><a href='/posts/add'>Inspection - Add an Event</a></li>
+                <li><a href='/posts/addEvent'>Inspection - Add an Event</a></li>
                 <li><a href='/posts/overview'>Deficiency Overview</a></li>
                 <li><a href='/posts/users'>Search Deficiency</a></li>
                 <li><a href='/users/logout'>Logout</a></li>
