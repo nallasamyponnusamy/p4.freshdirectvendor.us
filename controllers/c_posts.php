@@ -13,40 +13,7 @@ class posts_controller extends base_controller
     }
 
 
-    public function overview()
-    {
 
-        #public function index() {
-
-        # Set up the View
-        $this->template->content = View::instance('v_deficiency_overview');
-        $this->template->title = "All Posts";
-
-//        # Query
-//        $q = '(SELECT "Non Production" AS isProduction
-//							, DepartmentID AS DepartmentID
-//							, DepartmentName AS DepartmentName
-//						FROM NonProductionDepartmentList
-//						WHERE isActive = 1
-//						ORDER BY DepartmentName)
-//						UNION
-//						(SELECT "Production" AS isProduction
-//							, DepartmentID AS DepartmentID
-//							 , DepartmentName AS DepartmentName
-//						FROM ProductionDepartmentList
-//						WHERE isActive = 1
-//						ORDER BY DepartmentName);';
-//
-//        # Run the query, store the results in the variable $posts
-//        $sqlDepartmentList = DB::instance(DB_NAME)->select_rows($q);
-//
-//        # Pass data to the View
-//        $this->template->content->$$sqlDepartmentList = $sqlDepartmentList;
-
-        # Render the View
-        echo $this->template;
-
-    }
 
 
     public function add()
@@ -648,6 +615,20 @@ class posts_controller extends base_controller
                     break;
             }
         }
+    }
+
+    public function overview()
+    {
+
+        #public function index() {
+
+        # Set up the View
+        $this->template->content = View::instance('v_deficiency_overview');
+        $this->template->title = "All Posts";
+
+        # Render the View
+        echo $this->template;
+
     }
 
 }#End of Class posts_controller

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="053d6317-fd42-4c71-96ed-34d01b540d48" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/posts/includes/config.php" afterPath="$PROJECT_DIR$/posts/includes/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/c_posts.php" afterPath="$PROJECT_DIR$/controllers/c_posts.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="p4.freshdirectvendor.us.iws" />
@@ -20,16 +20,21 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
+  <component name="DatabaseView">
+    <flatten value="false" />
+    <groupTables value="false" />
+    <sortChildren value="false" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="p4.freshdirectvendor.us" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="v_deficiency_overview.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="v_deficiency_overview.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/v_deficiency_overview.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="46" selection-start="1788" selection-end="1788" vertical-scroll-proportion="0.659612" vertical-offset="357" max-vertical-offset="1054">
+            <state line="50" column="0" selection-start="2013" selection-end="2013" vertical-scroll-proportion="-15.038462" vertical-offset="459" max-vertical-offset="1054">
               <folding />
             </state>
           </provider>
@@ -109,21 +114,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="c_posts.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="c_posts.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/c_posts.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="351" column="3" selection-start="14094" selection-end="32694" vertical-scroll-proportion="-17.423077" vertical-offset="5514" max-vertical-offset="6137">
+            <state line="631" column="5" selection-start="31933" selection-end="31933" vertical-scroll-proportion="0.93862814" vertical-offset="10207" max-vertical-offset="10897">
               <folding>
-                <element signature="e#14095#32694#0" expanded="false" />
-                <marker date="1387744392371" expanded="true" signature="6388:6400" placeholder="..." />
-                <marker date="1387744392371" expanded="true" signature="6446:6459" placeholder="..." />
-                <marker date="1387744392371" expanded="true" signature="6504:6516" placeholder="..." />
-                <marker date="1387744392371" expanded="true" signature="6557:6570" placeholder="..." />
-                <marker date="1387744392371" expanded="true" signature="6613:6626" placeholder="..." />
-                <marker date="1387744392371" expanded="true" signature="16612:16711" placeholder="/*, DATE(a.D..." />
-                <marker date="1387744392371" expanded="true" signature="17094:17146" placeholder="/*, DATEDIFF..." />
-                <marker date="1387744392371" expanded="true" signature="25581:25671" placeholder="/*, DATE(a.D..." />
-                <marker date="1387744392371" expanded="true" signature="25973:26025" placeholder="/*, DATEDIFF..." />
+                <marker date="1387745807089" expanded="true" signature="5340:5352" placeholder="..." />
+                <marker date="1387745807089" expanded="true" signature="5398:5411" placeholder="..." />
+                <marker date="1387745807089" expanded="true" signature="5456:5468" placeholder="..." />
+                <marker date="1387745807089" expanded="true" signature="5509:5522" placeholder="..." />
+                <marker date="1387745807089" expanded="true" signature="5565:5578" placeholder="..." />
+                <marker date="1387745807089" expanded="true" signature="15564:15663" placeholder="/*, DATE(a.D..." />
+                <marker date="1387745807089" expanded="true" signature="16046:16098" placeholder="/*, DATEDIFF..." />
+                <marker date="1387745807089" expanded="true" signature="24533:24623" placeholder="/*, DATE(a.D..." />
+                <marker date="1387745807089" expanded="true" signature="24925:24977" placeholder="/*, DATEDIFF..." />
               </folding>
             </state>
           </provider>
@@ -191,10 +195,10 @@
         <option value="$PROJECT_DIR$/views/v_department.php" />
         <option value="$PROJECT_DIR$/views/v_enterevent_scrn.php" />
         <option value="C:/CSCI E-15 Dynamic Web Applications - Harvard Extension School/environment.php" />
-        <option value="$PROJECT_DIR$/controllers/c_posts.php" />
         <option value="$PROJECT_DIR$/posts/includes/config.php" />
         <option value="$PROJECT_DIR$/posts/deficiency_view.php" />
         <option value="$PROJECT_DIR$/views/v_deficiency_overview.php" />
+        <option value="$PROJECT_DIR$/controllers/c_posts.php" />
       </list>
     </option>
   </component>
@@ -206,8 +210,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="Local Server" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="201" />
-    <option name="y" value="139" />
+    <option name="x" value="60" />
+    <option name="y" value="157" />
     <option name="width" value="1648" />
     <option name="height" value="797" />
   </component>
@@ -491,14 +495,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="201" y="139" width="1648" height="797" extended-state="0" />
+    <frame x="60" y="157" width="1648" height="797" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.259375" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297604" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3480454" sideWeight="0.740625" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39844617" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -660,24 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/c_posts.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="351" column="3" selection-start="14094" selection-end="32694" vertical-scroll-proportion="-17.423077" vertical-offset="5514" max-vertical-offset="6137">
-          <folding>
-            <element signature="e#14095#32694#0" expanded="false" />
-            <marker date="1387744392371" expanded="true" signature="6388:6400" placeholder="..." />
-            <marker date="1387744392371" expanded="true" signature="6446:6459" placeholder="..." />
-            <marker date="1387744392371" expanded="true" signature="6504:6516" placeholder="..." />
-            <marker date="1387744392371" expanded="true" signature="6557:6570" placeholder="..." />
-            <marker date="1387744392371" expanded="true" signature="6613:6626" placeholder="..." />
-            <marker date="1387744392371" expanded="true" signature="16612:16711" placeholder="/*, DATE(a.D..." />
-            <marker date="1387744392371" expanded="true" signature="17094:17146" placeholder="/*, DATEDIFF..." />
-            <marker date="1387744392371" expanded="true" signature="25581:25671" placeholder="/*, DATE(a.D..." />
-            <marker date="1387744392371" expanded="true" signature="25973:26025" placeholder="/*, DATEDIFF..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/posts/deficiency_view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="287" column="21" selection-start="17704" selection-end="17704" vertical-scroll-proportion="-10.192307" vertical-offset="4614" max-vertical-offset="5168">
@@ -710,8 +696,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/v_deficiency_overview.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="46" selection-start="1788" selection-end="1788" vertical-scroll-proportion="0.659612" vertical-offset="357" max-vertical-offset="1054">
+        <state line="50" column="0" selection-start="2013" selection-end="2013" vertical-scroll-proportion="-15.038462" vertical-offset="459" max-vertical-offset="1054">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/c_posts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="631" column="5" selection-start="31933" selection-end="31933" vertical-scroll-proportion="0.93862814" vertical-offset="10207" max-vertical-offset="10897">
+          <folding>
+            <marker date="1387745807089" expanded="true" signature="5340:5352" placeholder="..." />
+            <marker date="1387745807089" expanded="true" signature="5398:5411" placeholder="..." />
+            <marker date="1387745807089" expanded="true" signature="5456:5468" placeholder="..." />
+            <marker date="1387745807089" expanded="true" signature="5509:5522" placeholder="..." />
+            <marker date="1387745807089" expanded="true" signature="5565:5578" placeholder="..." />
+            <marker date="1387745807089" expanded="true" signature="15564:15663" placeholder="/*, DATE(a.D..." />
+            <marker date="1387745807089" expanded="true" signature="16046:16098" placeholder="/*, DATEDIFF..." />
+            <marker date="1387745807089" expanded="true" signature="24533:24623" placeholder="/*, DATE(a.D..." />
+            <marker date="1387745807089" expanded="true" signature="24925:24977" placeholder="/*, DATEDIFF..." />
+          </folding>
         </state>
       </provider>
     </entry>
