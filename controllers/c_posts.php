@@ -13,6 +13,40 @@ class posts_controller extends base_controller
     }
 
 
+
+    public function addEvent()
+    {
+
+        # Setup view
+        $this->template->content = View::instance('v_CreateEventlog');
+        $this->template->title = "Enter Events After Inspection";
+
+        $q = '(SELECT "Non Production" AS isProduction
+							, DepartmentID AS DepartmentID
+							, DepartmentName AS DepartmentName
+						FROM NonProductionDepartmentList
+						WHERE isActive = 1
+						ORDER BY DepartmentName)
+						UNION
+						(SELECT "Production" AS isProduction
+							, DepartmentID AS DepartmentID
+							 , DepartmentName AS DepartmentName
+						FROM ProductionDepartmentList
+						WHERE isActive = 1
+						ORDER BY DepartmentName);';
+
+        # Run the query, store the results in the variable $posts
+        $posts = DB::instance(DB_NAME)->select_rows($q);
+
+        # Pass data to the View
+        $this->template->content->posts = $posts;
+        # Render template
+        echo $this->template;
+
+    }
+
+
+
     public function overview()
     {
 
@@ -49,36 +83,7 @@ class posts_controller extends base_controller
     }
 
 
-    public function addEvent()
-    {
 
-        # Setup view
-        $this->template->content = View::instance('v_CreateEventlog');
-        $this->template->title = "Enter Events After Inspection";
-
-        $q = '(SELECT "Non Production" AS isProduction
-							, DepartmentID AS DepartmentID
-							, DepartmentName AS DepartmentName
-						FROM NonProductionDepartmentList
-						WHERE isActive = 1
-						ORDER BY DepartmentName)
-						UNION
-						(SELECT "Production" AS isProduction
-							, DepartmentID AS DepartmentID
-							 , DepartmentName AS DepartmentName
-						FROM ProductionDepartmentList
-						WHERE isActive = 1
-						ORDER BY DepartmentName);';
-
-        # Run the query, store the results in the variable $posts
-        $posts = DB::instance(DB_NAME)->select_rows($q);
-
-        # Pass data to the View
-        $this->template->content->posts = $posts;
-        # Render template
-        echo $this->template;
-
-    }
 
 
 //    public function p_add()
