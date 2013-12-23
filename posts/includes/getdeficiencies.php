@@ -12,13 +12,7 @@ if (empty($DepartmentString)) {
     echo '<option value="" selected="selected">*** ERROR (MP) ***</option>';
     echo '</select>';
 } else {
-    // specify DB name
-    $dbName = "freshdir_p4_freshdirectvendor_us";
 
-    // include DB connection settings
-    require_once "config.php";
-    require_once "class.mysql.php";
-    $db = new mysql();
 
     $sqlDeficiencyList = 'SELECT DL.' . $DepartmentGroup . 'DeficiencyID AS DeficiencyID
 											, DL.' . $DepartmentGroup . 'DeficiencyName AS DeficiencyName

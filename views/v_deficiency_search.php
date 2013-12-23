@@ -65,9 +65,9 @@
 <body>
 
 <form id="searchEventLog" name="searchEventLog">
-    <input type="hidden" name="createdBy" id="createdBy" value="<?php echo $AuthUserID ?>"/>
+    <input type="hidden" name="createdBy" id="createdBy" value="<?php echo $user->AuthUserID; ?>"/>
 
-    <div class="returnLinkDiv"><a class="returnLink" href="SearchEventLog.php?d=<?php echo $AuthUserID; ?>">Return
+    <div class="returnLinkDiv"><a class="returnLink" href="SearchEventLog.php?d=<?php echo $user->AuthUserID; ?>">Return
             to Search Screen...</a></div>
     <div id="mainContent" style="width: 810px; height: 450px;">
         <div>
@@ -105,41 +105,16 @@
                         <div>
                             <select name="departmentList" id="departmentList" size="11" style="width: 225px;">
                                 <?php
-                                $sqlDepartmentList = '(SELECT "Non Production" AS isProduction
-										, DepartmentID AS DepartmentID
-										, DepartmentName AS DepartmentName
-									FROM NonProductionDepartmentList
-									WHERE isActive = 1
-									ORDER BY DepartmentName)
-									UNION
-									(SELECT "Production" AS isProduction
-										, DepartmentID AS DepartmentID
-										 , DepartmentName AS DepartmentName
-									FROM ProductionDepartmentList
-									WHERE isActive = 1
-									ORDER BY DepartmentName);';
-
                                 // separates production from non production departments
                                 $DepartmentGroup = '';
                                 $i = 0;
-
-                                // retrieve event types from db, else error
-                                if (!($sqlDepartmentListResults = $db->query($sqlDepartmentList))) {
-                                    die('<option value="">Error Department</option>');
-                                } else {
-                                    if ($db->numRows($sqlDepartmentListResults) == 0) {
-                                        echo '<option value="">No Departments Exist</option>';
-                                    } else {
-                                        while ($rowDepartmentListResults = $db->fetch($sqlDepartmentListResults)) {
+                                foreach ($posts as $rowDepartmentListResults):
+                                {
                                             if (empty($DepartmentGroup)) {
                                                 echo '<optgroup label="' . $rowDepartmentListResults["isProduction"] . '">';
                                                 echo '<option value="' . $rowDepartmentListResults["DepartmentID"] . '-' . str_replace(" ", "", $rowDepartmentListResults["isProduction"]) . '">' . $rowDepartmentListResults["DepartmentName"] . '</option>';
                                                 $DepartmentGroup = $rowDepartmentListResults["isProduction"];
                                             } else {
-                                                if ($i == $db->numRows($sqlDepartmentListResults)) {
-                                                    echo '<option value="' . $rowDepartmentListResults["DepartmentID"] . '-' . str_replace(" ", "", $rowDepartmentListResults["isProduction"]) . '">' . $rowDepartmentListResults["DepartmentName"] . '</option>';
-                                                    echo '</optgroup>';
-                                                } else {
                                                     if ($rowDepartmentListResults["isProduction"] <> $DepartmentGroup) {
                                                         echo '</optgroup>';
                                                         echo '<optgroup label="' . $rowDepartmentListResults["isProduction"] . '">';
@@ -150,10 +125,7 @@
                                                     }
                                                 }
                                             }
-                                            $i++;
-                                        }
-                                    }
-                                }
+                                endforeach; ?>
                                 ?>
                             </select>
                         </div>
@@ -204,7 +176,8 @@
             if ($(this).val() !== null) {
                 $.ajax({
                     type: "GET",
-                    url: "includes/getdeficiencies.php",
+//                    url: "includes/getdeficiencies.php",
+                    url:  "/posts/p_getDeficiencies",
                     data: "q=" + $("#departmentList").val(),
                     success: function (html) {
                         if (html.indexOf("ERROR") < 0) {
@@ -228,6 +201,7 @@
                 $.ajax({
                     type: "GET",
                     url: "includes/SearchEventLog.php",
+//                    url:  "/posts/p_SearchEventLog",
                     data: "d=" + encodeURIComponent($("#createdBy").val()) + "&sd=" + encodeURIComponent($("#startDate").val()) + "&ed=" + encodeURIComponent($("#endDate").val()) + "&deptl=" + (encodeURIComponent($("#departmentList").val()) || []) + "&defl=" + (encodeURIComponent($("#deficiencyList").val()) || []),
                     success: function (html) {
                         $("#mainContent").css('width', 'auto');

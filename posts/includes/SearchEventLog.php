@@ -4,7 +4,8 @@ $EndDate = strip_tags($_GET['ed']);
 $DepartmentString = (strip_tags($_GET['deptl']) == 'null') ? '' : strip_tags($_GET['deptl']);
 $DeficiencyString = (strip_tags($_GET['defl']) == 'null') ? '' : strip_tags($_GET['defl']);
 $AuthUserID = strip_tags($_GET['d']);
-
+$isFilter = '';
+$CurrentID = '';
 if (empty($AuthUserID) || ((empty($StartDate)) && (empty($EndDate)) && (empty($DepartmentString)) && (empty($DeficiencyString)))) {
     echo '<span style="display: block; padding: 10px 0px 10px 0px; font-weight: bold;">*** ERROR (MP) ***</span>';
 } else {
@@ -30,7 +31,7 @@ if (empty($AuthUserID) || ((empty($StartDate)) && (empty($EndDate)) && (empty($D
             $sqlDisplayEventLog = 'SELECT *
 						FROM (SELECT PIL.ProductionInspectionLogID AS EventLogID
 							, PDL.DepartmentName AS DepartmentName
-							, AU.EmployeeName AS CreatedBy
+							, AU.first_name AS CreatedBy
 							, PDEFLST.ProductionDeficiencyRiskFactor AS RiskFactor
 							, COALESCE(PDEFLST.ProductionDeficiencyName, NULL, "No Deficiencies Found!") AS DeficiencyName
 							, COALESCE(PDEFL.Comments, NULL, "N/A") AS Comments
@@ -42,7 +43,7 @@ if (empty($AuthUserID) || ((empty($StartDate)) && (empty($EndDate)) && (empty($D
 							, TS.TotalScore AS TotalScore
 						FROM ProductionInspectionLog AS PIL
 							LEFT JOIN ProductionDepartmentList AS PDL ON (PDL.DepartmentID = PIL.DepartmentID)
-							LEFT JOIN AuthUsers AS AU ON (PIL.AuthUserID = AU.AuthUserID)
+							LEFT JOIN users AS AU ON (PIL.AuthUserID = AU.AuthUserID)
 							LEFT JOIN ProductionDeficienciesLog AS PDEFL ON (PDEFL.ProductionInspectionLogID = PIL.ProductionInspectionLogID)
 							LEFT JOIN ProductionDeficienciesList AS PDEFLST ON (PDEFLST.ProductionDeficiencyID = PDEFL.ProductionDeficiencyID)
 					          LEFT JOIN (SELECT DAC.DepartmentID AS DepartmentID
@@ -81,7 +82,7 @@ if (empty($AuthUserID) || ((empty($StartDate)) && (empty($EndDate)) && (empty($D
 						UNION
 						SELECT NPIL.NonProductionInspectionLogID AS EventLogID
 							, NPDL.DepartmentName AS DepartmentName
-							, AU.EmployeeName AS CreatedBy
+							, AU.first_name AS CreatedBy
 							, NPDEFLST.NonProductionDeficiencyRiskFactor AS RiskFactor
 							, COALESCE(NPDEFLST.NonProductionDeficiencyName, NULL, "No Deficiencies Found!") AS DeficiencyName
 							, COALESCE(NPDEFL.Comments, NULL, "N/A") AS Comments
@@ -93,7 +94,7 @@ if (empty($AuthUserID) || ((empty($StartDate)) && (empty($EndDate)) && (empty($D
 							, TS.TotalScore AS TotalScore
 						FROM NonProductionInspectionLog AS NPIL
 							LEFT JOIN NonProductionDepartmentList AS NPDL ON (NPDL.DepartmentID = NPIL.DepartmentID)
-							LEFT JOIN AuthUsers AS AU ON (NPIL.AuthUserID = AU.AuthUserID)
+							LEFT JOIN users AS AU ON (NPIL.AuthUserID = AU.AuthUserID)
 							LEFT JOIN NonProductionDeficienciesLog AS NPDEFL ON (NPDEFL.NonProductionInspectionLogID = NPIL.NonProductionInspectionLogID)
 							LEFT JOIN NonProductionDeficienciesList AS NPDEFLST ON (NPDEFLST.NonProductionDeficiencyID = NPDEFL.NonProductionDeficiencyID)
 					          LEFT JOIN (SELECT DAC.DepartmentID AS DepartmentID
@@ -141,7 +142,7 @@ if (empty($AuthUserID) || ((empty($StartDate)) && (empty($EndDate)) && (empty($D
             // split string to the deficiency ID and group (production/non production)
             $DeficiencyStringArray = explode("-", $DeficiencyString);
             $DeficiencyID = $DeficiencyStringArray[0];
-            $DeficiencyGroup = $DeficiencyStringArray[1];
+//            $DeficiencyGroup = $DeficiencyStringArray[1];
             // *********************************************
 
             $isFilter .= (!(empty($StartDate))) ? 'AND IL.DateCreated >= "' . date('Y-m-d', strtotime($StartDate)) . '" ' : '';
@@ -151,7 +152,7 @@ if (empty($AuthUserID) || ((empty($StartDate)) && (empty($EndDate)) && (empty($D
 
             $sqlDisplayEventLog = 'SELECT IL.' . $DepartmentGroup . 'InspectionLogID AS EventLogID
 							, DL.DepartmentName AS DepartmentName
-							, AU.EmployeeName AS CreatedBy
+							, AU.first_name AS CreatedBy
 							, DEFLST.' . $DepartmentGroup . 'DeficiencyRiskFactor AS RiskFactor
 							, COALESCE(DEFLST.' . $DepartmentGroup . 'DeficiencyName, NULL, "No Deficiencies Found!") AS DeficiencyName
 							, COALESCE(DEFL.Comments, NULL, "N/A") AS Comments
@@ -163,7 +164,7 @@ if (empty($AuthUserID) || ((empty($StartDate)) && (empty($EndDate)) && (empty($D
 							, TS.TotalScore AS TotalScore
 						FROM ' . $DepartmentGroup . 'InspectionLog AS IL
 							LEFT JOIN ' . $DepartmentGroup . 'DepartmentList AS DL ON (DL.DepartmentID = IL.DepartmentID)
-							LEFT JOIN AuthUsers AS AU ON (IL.AuthUserID = AU.AuthUserID)
+							LEFT JOIN users AS AU ON (IL.AuthUserID = AU.AuthUserID)
 							LEFT JOIN ' . $DepartmentGroup . 'DeficienciesLog AS DEFL ON (DEFL.' . $DepartmentGroup . 'InspectionLogID = IL.' . $DepartmentGroup . 'InspectionLogID)
 							LEFT JOIN ' . $DepartmentGroup . 'DeficienciesList AS DEFLST ON (DEFLST.' . $DepartmentGroup . 'DeficiencyID = DEFL.' . $DepartmentGroup . 'DeficiencyID)
 					          LEFT JOIN (SELECT DAC.DepartmentID AS DepartmentID

@@ -33,7 +33,7 @@ function CreateEventLog(targetDiv) {
 
     // if all required fields were completed...
     if ((emptyFlag == 0) && (createdBy != "") && (departmentGroup != "") && (departmentID != "")) {
-//		var url="includes/EventLogCreation.php";
+//                var url="includes/EventLogCreation.php";
         var url = "/posts/p_addevent_to_db";
         url = url + "?" + str;
         url = url + "d=" + createdBy;
@@ -66,7 +66,7 @@ function stateChangedCreateEventLog(targetDiv, createdBy) {
     onRequestStart(); // show fetching message
 
     if (xmlHttpCreateEventLog.readyState == 4 || xmlHttpCreateEventLog.readyState == "complete") {
-        var returnPage = '/posts/add';
+        var returnPage = '/posts/addEvent';
 
         if (xmlHttpCreateEventLog.responseText == 1) {
             onResponseEnd();

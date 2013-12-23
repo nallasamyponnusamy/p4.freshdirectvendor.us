@@ -3,51 +3,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Food Safety Event Log - Display Log</title>
 
-<!--<link rel="stylesheet" href="/scripts/jquery/ui/themes/redmond/jquery.ui.all.css">-->
-<!--<link href="/scripts/jquery-tableSorter/themes/blue/style.css" type="text/css" rel="stylesheet" />-->
-<!--<link type="text/css" rel="stylesheet" href="css/main.css" />-->
-<!---->
-<!--<style type="text/css">-->
-<!--.tableClass-->
-<!--{-->
-<!--	font-size: 10px;-->
-<!--	border: 1px solid #000;-->
-<!--	overflow: auto;-->
-<!--	background-color: #66CCFF;-->
-<!--	width: 995px;-->
-<!--}-->
-<!---->
-<!--#tableHeader-->
-<!--{-->
-<!--	float: left;-->
-<!--	margin: 0px 1px 0px 2px;-->
-<!--}-->
-<!---->
-<!--#callListTable-->
-<!--{-->
-<!--	border: 1px solid #000000;-->
-<!--	font-size: 10px;-->
-<!--	color: #000;-->
-<!--}-->
-<!---->
-<!--.normTD-->
-<!--{-->
-<!--	background-color: #FFF !important;-->
-<!--}-->
-<!---->
-<!--.altTD-->
-<!--{-->
-<!--	background-color: #ddeeee !important;-->
-<!--}-->
-<!---->
-<!--/*table.tablesorter tbody tr:nth-child(even)-->
-<!--{-->
-<!--	background-color: #6E6E6E !important;-->
-<!--}*/-->
-<!---->
-<!--</style>-->
-<!---->
-<!--</head>-->
 <body>
 <center>
 <div id="mainContent">
@@ -123,7 +78,6 @@ $(document).ready(function()
 	$("#filterDropdown").bind("change", function() {
 		$.ajax({
 			type: "GET", 
-//			url: "includes/ReturnFilteredResults.php",
             url: "/posts/deficiency_view",
 			data: "str="+encodeURIComponent($("#filterDropdown").val())+"&d=1",
 			success: function(html) {
@@ -136,6 +90,5 @@ $(document).ready(function()
 });
 </script>
 
-<?php //include_once("../analyticstracking.php") ?>
 </body>
 <!--</html>-->

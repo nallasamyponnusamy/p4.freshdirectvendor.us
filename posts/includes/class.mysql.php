@@ -156,7 +156,7 @@ class mysql
         if ($config['dev']) {
             print $sql . "<div id='error'>" . $error . "<br /><br />" . $errorNo . "</div>";
         } else {
-            mail($config['admin_email'], "SQL Error on " . $config['site_name'], $sql . "\n\n Error Msg: " . $error . "\n\n Error Number: " . $errorNo . "\n\n Page: " . $_SERVER['REQUEST_URI'], "From: " . $config['admin_email']);
+//            mail($config['admin_email'], "SQL Error on " . $config['site_name'], $sql . "\n\n Error Msg: " . $error . "\n\n Error Number: " . $errorNo . "\n\n Page: " . $_SERVER['REQUEST_URI'], "From: " . $config['admin_email']);
         }
     }
 
