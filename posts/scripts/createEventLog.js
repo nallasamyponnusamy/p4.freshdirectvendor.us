@@ -66,7 +66,7 @@ function stateChangedCreateEventLog(targetDiv, createdBy) {
     onRequestStart(); // show fetching message
 
     if (xmlHttpCreateEventLog.readyState == 4 || xmlHttpCreateEventLog.readyState == "complete") {
-        var returnPage = '/posts/add';
+        var returnPage = '/posts/addEvent';
 
         if (xmlHttpCreateEventLog.responseText == 1) {
             onResponseEnd();

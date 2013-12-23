@@ -68,17 +68,17 @@
 </head>
 <body>
 <center>
-    <?php
-    $AuthUserID = strip_tags($_GET['d']);
-
-    // specify DB name
-    $dbName = "freshdir_p4_freshdirectvendor_us";
-
-    // include DB connection settings
-    require_once "includes/config.php";
-    require_once "includes/class.mysql.php";
-    $db = new mysql();
-    ?>
+<!--    --><?php
+//    $AuthUserID = strip_tags($_GET['d']);
+//
+//    // specify DB name
+//    $dbName = "freshdir_p4_freshdirectvendor_us";
+//
+//    // include DB connection settings
+//    require_once "includes/config.php";
+//    require_once "includes/class.mysql.php";
+//    $db = new mysql();
+//    ?>
     <form id="searchEventLog" name="searchEventLog">
         <input type="hidden" name="createdBy" id="createdBy" value="<?php echo $AuthUserID ?>"/>
 
@@ -255,6 +255,5 @@
         });
     });
 </script>
-<?php //include_once("../analyticstracking.php") ?>
 </body>
 </html>

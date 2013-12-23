@@ -237,10 +237,10 @@
             $.ajax({
                 type: 'GET',
 //                url: 'includes/EventLogCreation.php',
-                url: '/posts/p_addevent_to_db',
+                url: "/posts/p_addevent_to_db",
                 data: 'd=' + $('#createdBy').val() + '&dept=' + $('#departmentID').val() + '&g=' + $('#departmentGroup').val() + '&sid=' + Math.random() + '&def=0',
                 success: function (html) {
-                    var returnPage = '/posts/add';
+                    var returnPage = '/posts/addEvent';
 
                     if (html == 1) {
                         onResponseEnd();

@@ -49,15 +49,15 @@
         <ul>
             <?php if ($user): ?>
                 <!-- Menu for users who are logged in -->
-                <li><a href='/posts/p_add'>Inspection - Add an Event</a></li>
+                <li><a href='/posts/addEvent'>Inspection - Add an Event</a></li>
                 <li><a href='/posts/overview'>Deficiency Matrix</a></li>
-                <li><a href='/posts/users'>Search Deficiency</a></li>
+                <li><a href='/posts/Search'>Search Deficiency</a></li>
                 <li><a href='/users/logout'>Logout</a></li>
             <?php else: ?>
                 <!-- Menu for users who are NOT logged in -->
                 <li><a href='/users/signup'>SignUp</a></li>
                 <li><a href='/users/login'>Login </a></li>
-                <li><a href='/users/forgetpwd'>Forgot Password?</a></li>
+<!--                <li><a href='/users/forgetpwd'>Forgot Password?</a></li><!---->-->
             <?php endif; ?>
         </ul>
     </nav>

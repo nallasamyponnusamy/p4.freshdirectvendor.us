@@ -49,7 +49,7 @@ class posts_controller extends base_controller
     }
 
 
-    public function p_add()
+    public function addEvent()
     {
 
         # Setup view
@@ -488,6 +488,32 @@ class posts_controller extends base_controller
                    }
         }
     }
+    #Public function with deficiency_view
+    public function Search(){
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }#End of Class posts_controller
 
