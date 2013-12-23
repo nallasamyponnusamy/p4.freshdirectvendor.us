@@ -57,7 +57,7 @@
                 <!-- Menu for users who are NOT logged in -->
                 <li><a href='/users/signup'>SignUp</a></li>
                 <li><a href='/users/login'>Login </a></li>
-<!--                <li><a href='/users/forgetpwd'>Forgot Password?</a></li><!---->-->
+<!--    <li><a href='/users/forgetpwd'>Forgot Password?</a></li><!---->
             <?php endif; ?>
         </ul>
     </nav>

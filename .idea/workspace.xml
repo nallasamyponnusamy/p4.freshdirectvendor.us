@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="053d6317-fd42-4c71-96ed-34d01b540d48" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/c_posts.php" afterPath="$PROJECT_DIR$/controllers/c_posts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/_v_template.php" afterPath="$PROJECT_DIR$/views/_v_template.php" />
     </list>
     <ignored path="p4.freshdirectvendor.us.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -91,10 +91,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_v_template.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_v_template.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/_v_template.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="44" selection-start="2312" selection-end="2312" vertical-scroll-proportion="-3.8076923" vertical-offset="768" max-vertical-offset="1649">
+            <state line="59" column="5" selection-start="2766" selection-end="2766" vertical-scroll-proportion="0.4144621" vertical-offset="768" max-vertical-offset="1649">
               <folding />
             </state>
           </provider>
@@ -111,10 +111,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="c_posts.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="c_posts.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/c_posts.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="5" selection-start="1255" selection-end="1255" vertical-scroll-proportion="0.9568528" vertical-offset="11" max-vertical-offset="9010">
+            <state line="11" column="0" selection-start="318" selection-end="318" vertical-scroll-proportion="-3.4509804" vertical-offset="11" max-vertical-offset="9010">
               <folding>
                 <marker date="1387761484974" expanded="true" signature="6437:6449" placeholder="..." />
                 <marker date="1387761484974" expanded="true" signature="6495:6508" placeholder="..." />
@@ -213,8 +213,8 @@
         <option value="$PROJECT_DIR$/views/v_deficiency_search.php" />
         <option value="$PROJECT_DIR$/views/v_CreateEventLog.php" />
         <option value="$PROJECT_DIR$/posts/scripts/createEventLog.js" />
-        <option value="$PROJECT_DIR$/views/_v_template.php" />
         <option value="$PROJECT_DIR$/controllers/c_posts.php" />
+        <option value="$PROJECT_DIR$/views/_v_template.php" />
       </list>
     </option>
   </component>
@@ -226,10 +226,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="Local Server" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="97" />
+    <option name="y" value="69" />
+    <option name="width" value="1648" />
+    <option name="height" value="797" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -511,7 +511,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="97" y="69" width="1648" height="797" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -521,7 +521,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297604" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2945571" sideWeight="0.5761958" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3480454" sideWeight="0.5761958" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39844617" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0756396" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -736,16 +736,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/_v_template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="44" selection-start="2312" selection-end="2312" vertical-scroll-proportion="-3.8076923" vertical-offset="768" max-vertical-offset="1649">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/c_posts.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="5" selection-start="1255" selection-end="1255" vertical-scroll-proportion="0.9568528" vertical-offset="11" max-vertical-offset="9010">
+        <state line="11" column="0" selection-start="318" selection-end="318" vertical-scroll-proportion="-3.4509804" vertical-offset="11" max-vertical-offset="9010">
           <folding>
             <marker date="1387761484974" expanded="true" signature="6437:6449" placeholder="..." />
             <marker date="1387761484974" expanded="true" signature="6495:6508" placeholder="..." />
@@ -781,6 +774,13 @@
             <marker date="1387761484974" expanded="true" signature="19722:19795" placeholder="..." />
             <marker date="1387761484974" expanded="true" signature="20282:20326" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/_v_template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="5" selection-start="2766" selection-end="2766" vertical-scroll-proportion="0.4144621" vertical-offset="768" max-vertical-offset="1649">
+          <folding />
         </state>
       </provider>
     </entry>
