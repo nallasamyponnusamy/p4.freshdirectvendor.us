@@ -13,7 +13,6 @@ class posts_controller extends base_controller
     }
 
 
-
     public function addEvent()
     {
 
@@ -46,7 +45,6 @@ class posts_controller extends base_controller
     }
 
 
-
     public function overview()
     {
 
@@ -56,55 +54,10 @@ class posts_controller extends base_controller
         $this->template->content = View::instance('v_deficiency_overview');
         $this->template->title = "All Posts";
 
-//        # Query
-//        $q = '(SELECT "Non Production" AS isProduction
-//							, DepartmentID AS DepartmentID
-//							, DepartmentName AS DepartmentName
-//						FROM NonProductionDepartmentList
-//						WHERE isActive = 1
-//						ORDER BY DepartmentName)
-//						UNION
-//						(SELECT "Production" AS isProduction
-//							, DepartmentID AS DepartmentID
-//							 , DepartmentName AS DepartmentName
-//						FROM ProductionDepartmentList
-//						WHERE isActive = 1
-//						ORDER BY DepartmentName);';
-//
-//        # Run the query, store the results in the variable $posts
-//        $sqlDepartmentList = DB::instance(DB_NAME)->select_rows($q);
-//
-//        # Pass data to the View
-//        $this->template->content->$$sqlDepartmentList = $sqlDepartmentList;
-
         # Render the View
         echo $this->template;
 
     }
-
-
-
-
-
-//    public function p_add()
-//    {
-//
-//        # Associate this post with this user
-//        $_POST['user_id'] = $this->user->user_id;
-//
-//        # Unix timestamp of when this post was created / modified
-//        $_POST['created'] = Time::now();
-//        $_POST['modified'] = Time::now();
-//
-//        # Insert
-//        # Note we didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
-//        DB::instance(DB_NAME)->insert('posts', $_POST);
-//
-//        # Quick and dirty feedback
-//        //echo "Your post has been added. <a href='/posts/add'>Add another</a>";
-//        # Send them back
-//        Router::redirect("/posts/index");
-//    }
 
 
     public function p_addevent()
@@ -116,26 +69,6 @@ class posts_controller extends base_controller
         $DepartmentStringArray = explode("-", $DepartmentString);
         $DepartmentID = $DepartmentStringArray[0];
         $DepartmentGroup = $DepartmentStringArray[1];
-// *********************************************
-
-//if ((empty($DepartmentID)) || (empty($DepartmentGroup)))
-//{
-//    echo '<div class="notice"><h3>*** ERROR (EP) ***<br /><br />Please contact your <a href="mailto:'.$dbAdminInfo.'" class="errorEmailLink">database administrator</a> if you believe this is an error.</h3></div>';
-//} else
-//{
-// specify DB name
-//    $dbName= "freshdir_p4_freshdirectvendor_us" ;
-//
-//    // include DB connection settings
-//    require_once "config.php";
-//    require_once "class.mysql.php";
-//    $db = new mysql();
-
-# Setup view
-
-
-//        $this->template->content = View::instance('v_enterevent_scrn');
-//        $this->template->title = "New Post";
 
         $q = 'SELECT DL.' . $DepartmentGroup . 'DeficiencyID AS DeficiencyID
 											, DL.' . $DepartmentGroup . 'DeficiencyName AS DeficiencyName
@@ -158,17 +91,6 @@ class posts_controller extends base_controller
 # Run the query, store the results in the variable $posts
         $posts = DB::instance(DB_NAME)->select_rows($q);
 # Pass data to the View
-//        if (!($sqlDisplayDepartmentDeficienciesResults = $db->query($sqlDisplayDepartmentDeficiencies)))
-//        {
-//            echo '<div class="notice"><h3>*** ERROR (EP) ***<br /><br />Error reported, we apologize for any inconvinience.</h3></div>';
-//        } else
-//        {
-//            // check if row is returned, if yes error, if no get values
-//            if ($db->numRows($sqlDisplayDepartmentDeficienciesResults) == 0)
-//            {
-//                echo '<div class="notice"><h3>No deficiencies assigned to this department yet.<br /><br />Please contact your <a href="mailto:'.$dbAdminInfo.'" class="errorEmailLink">database administrator</a> if you believe this is an error.</h3></div>';
-//            } else
-//            {
 
         echo '<input type="hidden" name="departmentID" id="departmentID" value="' . $DepartmentID . '" />';
         echo '<input type="hidden" name="departmentGroup" id="departmentGroup" value="' . $DepartmentGroup . '" />';
@@ -222,9 +144,6 @@ class posts_controller extends base_controller
     public function p_addevent_to_db()
     {
 
-// assign non dynamic values to variables
-//        $CreatedBy = htmlspecialchars(strip_tags($_GET["d"]), ENT_QUOTES);
-//        $CreatedBy = $this->user->user_id;
         $CreatedBy = $this->user->AuthUserID;
         $DepartmentID = htmlspecialchars(strip_tags($_GET["dept"]), ENT_QUOTES);
         $DepartmentGroup = 'NonProduction';
@@ -232,8 +151,6 @@ class posts_controller extends base_controller
 
 // indicates if there is any error
         $isSuccess = 1;
-//Ponnu
-//        $CreatedBy = 1;
 
         if ((empty($CreatedBy)) || (empty($DepartmentGroup)) || (empty($DepartmentID))) {
             echo '*** ERROR (MP) ***';
@@ -248,11 +165,11 @@ class posts_controller extends base_controller
             # Do the insert
             DB::instance(DB_NAME)->insert($DepartmentGroup . 'InspectionLog', $data);
             $LastInsertID = DB::instance(DB_NAME)->select_field("SELECT max(NonProductionInspectionLogID) FROM nonproductioninspectionlog");
-//    if (!($sqlCreateNewInspectionRecordResults = $db->query($sqlCreateNewInspectionRecord)))
+
             if (!$data) {
                 $isSuccess = 0;
             } else {
-//                $LastInsertID = mysql_insert_id();
+
 
                 if (!empty($isDeficiency)) {
                     // assign query string to variable
@@ -305,7 +222,7 @@ class posts_controller extends base_controller
 
 //                        if (!($sqlCreateNewDeficiencyRecordResults = $db->query($sqlCreateNewDeficiencyRecord)))
 //                        {
-                                $isSuccess = 0;
+                                $isSuccess = 1;
 //                        }
 //                        break;
 
@@ -325,13 +242,13 @@ class posts_controller extends base_controller
                 // include send email code
                 //include_once( 'export.php' );
             }
+            $isSuccess = 1;
             echo $isSuccess;
 
         }
 
 
     }
-
 
 
     #Public function with deficiency_view
@@ -409,45 +326,45 @@ class posts_controller extends base_controller
 
                     ?><?php
                     echo '<table class="tablesorter">';
-                      echo   "<thead>";
-                      echo   "<tr>";
-                        echo    ' <th style="width: 70px;">Inspection Date</th>';
-                         echo    '<th style="width: 70px;">Created By</th>';
-                            echo '<th style="width: 75px;">Department</th>';
-                            echo '<th style="width: 25px;">Risk</th>';
-                            echo '<th style="width: 200px;">Deficiency</th>';
-                            echo '<th style="width: 200px;">Comments</th>';
-                           echo  '<th style="width: 200px;">Corrective Action(s)</th>';
-                            echo '<th style="width: 25px; text-align: center;">%</th>';
-                            echo  '<th style="width: 25px; text-align: center;">Days</th>';
-                        echo  "</tr>";
-                       echo  " </thead>";
-                        echo  "<tbody>";
+                    echo "<thead>";
+                    echo "<tr>";
+                    echo ' <th style="width: 70px;">Inspection Date</th>';
+                    echo '<th style="width: 70px;">Created By</th>';
+                    echo '<th style="width: 75px;">Department</th>';
+                    echo '<th style="width: 25px;">Risk</th>';
+                    echo '<th style="width: 200px;">Deficiency</th>';
+                    echo '<th style="width: 200px;">Comments</th>';
+                    echo '<th style="width: 200px;">Corrective Action(s)</th>';
+                    echo '<th style="width: 25px; text-align: center;">%</th>';
+                    echo '<th style="width: 25px; text-align: center;">Days</th>';
+                    echo "</tr>";
+                    echo " </thead>";
+                    echo "<tbody>";
 
-                        $i = 0;
-                        $CurrentID = '';
-                        foreach ($sqlDisplayEventLogResults as $rowDisplayEventLog):
+                    $i = 0;
+                    $CurrentID = '';
+                    foreach ($sqlDisplayEventLogResults as $rowDisplayEventLog):
 //                        while ($rowDisplayEventLog = mysql_fetch_array($sqlDisplayEventLogResults) )
-                        {
-                            $i++;
+                    {
+                        $i++;
 
                         if ($rowDisplayEventLog['DeficiencyInspectionLogID'] <> $CurrentID) {
-                        if (!empty($CurrentID)) {
-                            ?>
-                            <script type="text/javascript">
-                                var html = '<?php echo number_format(100-(($sumOfDefiecencies/$totalSumOfDefiecencies)*100),0); ?>';
-                                $("#evtID<?php echo $CurrentID; ?>").html(html);
-                                $("#evtID<?php echo $CurrentID; ?>").css('font-weight', 'bold').css('text-align', 'center');
-                            </script>
-                        <?php
-                        }
+                            if (!empty($CurrentID)) {
+                                ?>
+                                <script type="text/javascript">
+                                    var html = '<?php echo number_format(100-(($sumOfDefiecencies/$totalSumOfDefiecencies)*100),0); ?>';
+                                    $("#evtID<?php echo $CurrentID; ?>").html(html);
+                                    $("#evtID<?php echo $CurrentID; ?>").css('font-weight', 'bold').css('text-align', 'center');
+                                </script>
+                            <?php
+                            }
 
-                        $CurrentID = $rowDisplayEventLog['EventLogID'];
-                        $sumOfDefiecencies = 0;
-                        $isAltClass = 'class="altTD"';
-                        $isEvtID = 'id="evtID' . $CurrentID . '"';
-                        $sumOfDefiecencies = $rowDisplayEventLog["DeficiencyScore"];
-                        $totalSumOfDefiecencies = $rowDisplayEventLog["TotalScore"];
+                            $CurrentID = $rowDisplayEventLog['EventLogID'];
+                            $sumOfDefiecencies = 0;
+                            $isAltClass = 'class="altTD"';
+                            $isEvtID = 'id="evtID' . $CurrentID . '"';
+                            $sumOfDefiecencies = $rowDisplayEventLog["DeficiencyScore"];
+                            $totalSumOfDefiecencies = $rowDisplayEventLog["TotalScore"];
                         } else {
                             $isAltClass = 'class="normTD"';
                             $isEvtID = '';
@@ -472,9 +389,8 @@ class posts_controller extends base_controller
                         echo '</tr>';
 
                         //                    if ($i == $db->numRows($sqlDisplayEventLogResults))
-                        if ($i == count($sqlDisplayEventLogResults))
-                        {
-                        ?>
+                        if ($i == count($sqlDisplayEventLogResults)) {
+                            ?>
                             <script type="text/javascript">
                                 var html = '<?php echo number_format(100-(($sumOfDefiecencies/$totalSumOfDefiecencies)*100),0); ?>';
                                 $("#evtID<?php echo $CurrentID; ?>").html(html);
@@ -482,42 +398,24 @@ class posts_controller extends base_controller
                             </script>
                         <?php
                         }
-                        }
-                        endforeach;
+                    }
+                    endforeach;
 
-                        ?>
-                        </tbody>
+                    ?>
+                    </tbody>
                     </table>
                     <?php
                     break;
-                   }
+            }
         }
     }
+
     #Public function with deficiency_view
-    public function Search(){
-
-
-
-
-
+    public function Search()
+    {
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }#End of Class posts_controller

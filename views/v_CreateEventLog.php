@@ -1,63 +1,4 @@
-<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
-<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
-<!--<head>-->
-<!--    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
-<!--    <title>Food Safety Log - Create Event</title>-->
-<!---->
-<!--    <link rel="stylesheet" href="/scripts/jquery/ui/themes/redmond/jquery.ui.all.css">-->
-<!--    <link type="text/css" rel="stylesheet" href="css/main.css" />-->
-<!--    <link href="/scripts/jquery-tableSorter/themes/blue/style.css" type="text/css" rel="stylesheet" />-->
-<!---->
-<!--    <style type="text/css">-->
-<!--        table.tablesorter tbody td-->
-<!--        {-->
-<!--            background-color: #FFF !important;-->
-<!--        }-->
-<!--    </style>-->
-<!--</head>-->
-<!--<body>-->
-<?php
-// specify DB name
-//$dbName= "freshdir_p4_freshdirectvendor_us" ;
 
-// include DB connection settings
-//require_once "includes/config.php";
-//require_once "includes/class.mysql.php";
-//$db = new mysql();
-
-// include user authentication code
-//include_once( 'includes/authenticateuser.php' );
-
-//$AuthUserID = strip_tags($_GET['d']);
-
-//$AuthUserID = '2';
-/*if (empty($AuthUserID))
-{
-	die ("<center><h3>You do not have access to this page.</h3></center>");
-} else
-{
-	// checks that user is authorized
-	$sqlAuthentication = 'SELECT EmployeeName AS AuthUserName
-						FROM users
-						WHERE MD5(AuthUserID) = "'.$AuthUserID.'"
-						AND isActive = 1';
-
-	$sqlAuthenticationResults = $db->query($sqlAuthentication);
-
-	// check if row is returned, if yes error, if no get values
-	if ($db->numRows($sqlAuthenticationResults) == 0)
-	{
-		die ('<center><h3>You do not have access to this page. Please contact the Food Safety Department</h3></center>');
-	} else
-	{
-		$rowAuthenticationResults = $db->fetch($sqlAuthenticationResults);
-
-		$AuthUserName = $rowAuthenticationResults['AuthUserName'];
-	}
-}*/
-
-//$dateValue = date('Y-m-d g:i a');
-?>
 <div style="width: 100%; position: absolute; z-index: 100; margin: 5px 0px 0px 0px;" id="notificationDiv">
     <div class="error-note-bar">
         <p>An error has occurred and it has been reported. We apologize...</p>
@@ -79,35 +20,6 @@
                                                                                               id="departmentList">
                 <option value="">--- Select ---</option>
                 <?php
-                //                $sqlDepartmentList = '(SELECT "Non Production" AS isProduction
-                //							, DepartmentID AS DepartmentID
-                //							, DepartmentName AS DepartmentName
-                //						FROM NonProductionDepartmentList
-                //						WHERE isActive = 1
-                //						ORDER BY DepartmentName)
-                //						UNION
-                //						(SELECT "Production" AS isProduction
-                //							, DepartmentID AS DepartmentID
-                //							 , DepartmentName AS DepartmentName
-                //						FROM ProductionDepartmentList
-                //						WHERE isActive = 1
-                //						ORDER BY DepartmentName);';
-
-                // separates production from non production departments
-                //                $DepartmentGroup = '';
-                //                $i = 0;
-
-                // retrieve event types from db, else error
-                //                if (!($sqlDepartmentListResults = $db->query($sqlDepartmentList)))
-                //                {
-                //                    die('<option value="">Error Department</option>');
-                //                } else
-                //                {
-                //                    if ($db->numRows($sqlDepartmentListResults) == 0)
-                //                    {
-                //                        echo '<option value="">No Departments Exist</option>';
-                //                    } else
-                //                    {
 
                 foreach ($posts as $rowDepartmentListResults):
 //                     while ( $rowDepartmentListResults = $db->fetch($sqlDepartmentListResults) )
@@ -117,12 +29,6 @@
                         echo '<option value="' . $rowDepartmentListResults["DepartmentID"] . '-' . str_replace(" ", "", $rowDepartmentListResults["isProduction"]) . '">' . $rowDepartmentListResults["DepartmentName"] . '</option>';
                         $DepartmentGroup = $rowDepartmentListResults["isProduction"];
                     } else {
-//                                if ($i == $db->numRows($sqlDepartmentListResults))
-//                                {
-//                                    echo '<option value="'.$rowDepartmentListResults["DepartmentID"].'-'.str_replace(" ", "", $rowDepartmentListResults["isProduction"]).'">'.$rowDepartmentListResults["DepartmentName"].'</option>';
-//                                    echo '</optgroup>';
-//                                } else
-//                                {
                         if ($rowDepartmentListResults["isProduction"] <> $DepartmentGroup) {
                             echo '</optgroup>';
                             echo '<optgroup label="' . $rowDepartmentListResults["isProduction"] . '">';
@@ -133,11 +39,8 @@
                         }
                     }
                 }
-//                            $i++;
 
                 endforeach; ?>
-                <!--                    }-->
-                <!--                }-->
                 ?>
             </select></div>
     </div>
@@ -262,15 +165,6 @@
                 }
             });
         });
-
-        // limit number of characters for textbox
-        /*	$("#eventComments").limita({
-         limit: eventCommentsCounterLimit,
-         id_result: "eventCommentsCounter",
-         alertClass: "characterLimitAlert"
-         });*/
     });
 </script>
-<?php //include_once("../analyticstracking.php") ?>
 </body>
-<!--</html>-->

@@ -50,7 +50,7 @@
             <?php if ($user): ?>
                 <!-- Menu for users who are logged in -->
                 <li><a href='/posts/addEvent'>Inspection - Add an Event</a></li>
-                <li><a href='/posts/overview'>Deficiency Matrix</a></li>
+                <li><a href='/posts/overview'>Deficiency Score Card</a></li>
                 <li><a href='/posts/Search'>Search Deficiency</a></li>
                 <li><a href='/users/logout'>Logout</a></li>
             <?php else: ?>

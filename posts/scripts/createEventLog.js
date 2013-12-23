@@ -68,7 +68,7 @@ function stateChangedCreateEventLog(targetDiv, createdBy) {
     if (xmlHttpCreateEventLog.readyState == 4 || xmlHttpCreateEventLog.readyState == "complete") {
         var returnPage = '/posts/addEvent';
 
-        if (xmlHttpCreateEventLog.responseText == 1) {
+        if (xmlHttpCreateEventLog.responseText === 1) {
             onResponseEnd();
             $('#mainContent input, select, textarea, button').each(function () {
                 $(this).attr("disabled", true);
@@ -85,7 +85,7 @@ function stateChangedCreateEventLog(targetDiv, createdBy) {
             /*document.getElementById('submitButton').disabled = true;
              document.getElementById(targetDiv).style.textAlign = 'left';*/
             document.getElementById(targetDiv).innerHTML = '&nbsp;&nbsp;<a href="' + returnPage + '?d=' + createdBy + '" class="returnLinks">Return...</a>';
-            $(".error-note-bar").slideDown(100);
+            $(".success-note-bar").slideDown(100);
         }
     }
 }
