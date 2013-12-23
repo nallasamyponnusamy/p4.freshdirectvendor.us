@@ -6,19 +6,14 @@ $dbAdminInfo = "pnallasamy@freshdirect.com";
 
 $config = array(
 
-//Database Connections
-//"db_host" => "nyc1fdrt02.nyc1.freshdirect.com",
-//"db_user" => "fd_fsl_user",
-//"db_password" => "zn7zK9Bg",
-//"db_database" => $dbName,
 
     "db_host" => "localhost",
 
-//    "db_user" => "freshdir_p4",
-//    "db_password" => "fresh123",
+    "db_user" => "freshdir_p4",
+    "db_password" => "fresh123",
 
-    "db_user" => "root",
-    "db_password" => "",
+//    "db_user" => "root",
+//    "db_password" => "",
 
 //    "db_database" => $dbName,
     "db_database" => $dbName,
