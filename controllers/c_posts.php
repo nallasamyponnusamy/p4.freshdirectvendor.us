@@ -18,7 +18,7 @@ class posts_controller extends base_controller
     {
 
         # Setup view
-        $this->template->content = View::instance('v_CreateEventlog');
+        $this->template->content = View::instance('v_CreateEventLog');
         $this->template->title = "Enter Events After Inspection";
 
         $q = '(SELECT "Non Production" AS isProduction
