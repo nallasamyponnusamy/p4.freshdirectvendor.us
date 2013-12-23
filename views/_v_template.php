@@ -33,7 +33,7 @@
 
 <header>
     <h1><a href='/index.php'> ..Guidelines/Inspection Checklist as per FDA!</a></h1>
-    <!--    <h2 class="blog">Announcement Portal</h2>-->
+    <!--    <h2 class="blog"></h2>-->
 
     <nav>
         <!-- Welcome Message for the user based on his/her login status -->
@@ -49,8 +49,8 @@
         <ul>
             <?php if ($user): ?>
                 <!-- Menu for users who are logged in -->
-                <li><a href='/posts/addEvent'>Inspection - Add an Event</a></li>
-                <li><a href='/posts/overview'>Deficiency Overview</a></li>
+                <li><a href='/posts/p_add'>Inspection - Add an Event</a></li>
+                <li><a href='/posts/overview'>Deficiency Matrix</a></li>
                 <li><a href='/posts/users'>Search Deficiency</a></li>
                 <li><a href='/users/logout'>Logout</a></li>
             <?php else: ?>
@@ -83,7 +83,7 @@
                  alt="Valid CSS!"/>
         </a>
     </p>
-    Project 2 - CSCIE15
+    Project 4 - CSCIE15
 </footer>
 </html>
 
