@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="053d6317-fd42-4c71-96ed-34d01b540d48" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/posts/includes/config.php" afterPath="$PROJECT_DIR$/posts/includes/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/v_CreateEventLog.php" afterPath="$PROJECT_DIR$/views/v_CreateEventLog.php" />
     </list>
     <ignored path="p4.freshdirectvendor.us.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,11 +30,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="v_CreateEventLog.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="v_CreateEventLog.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/v_CreateEventLog.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="3" selection-start="1325" selection-end="1407" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="2992">
-              <folding />
+            <state line="5" column="0" selection-start="218" selection-end="314" vertical-scroll-proportion="0.23480663" vertical-offset="0" max-vertical-offset="2992">
+              <folding>
+                <marker date="1387826045683" expanded="false" signature="4972:5019" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,7 +128,7 @@
       <file leaf-file-name="SearchEventLog.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SearchEventLog.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="116" column="106" selection-start="4274" selection-end="4274" vertical-scroll-proportion="0.0" vertical-offset="1972" max-vertical-offset="4488">
+            <state line="227" column="35" selection-start="11074" selection-end="11074" vertical-scroll-proportion="-4.6153846" vertical-offset="3586" max-vertical-offset="4335">
               <folding />
             </state>
           </provider>
@@ -153,6 +155,8 @@
                 <marker date="1387824814306" expanded="false" signature="20164:20177" placeholder="..." />
                 <marker date="1387824814306" expanded="false" signature="20244:20276" placeholder="..." />
                 <marker date="1387824814306" expanded="false" signature="20324:20356" placeholder="..." />
+                <marker date="1387824814306" expanded="true" signature="21026:21419" placeholder="..." />
+                <marker date="1387824814306" expanded="true" signature="23745:24122" placeholder="..." />
                 <marker date="1387824814306" expanded="false" signature="26152:26214" placeholder="..." />
                 <marker date="1387824814306" expanded="false" signature="34312:34324" placeholder="..." />
                 <marker date="1387824814306" expanded="false" signature="34378:34390" placeholder="..." />
@@ -163,6 +167,8 @@
                 <marker date="1387824814306" expanded="false" signature="34677:34690" placeholder="..." />
                 <marker date="1387824814306" expanded="false" signature="34749:34781" placeholder="..." />
                 <marker date="1387824814306" expanded="false" signature="34821:34853" placeholder="..." />
+                <marker date="1387824814306" expanded="true" signature="35405:35750" placeholder="..." />
+                <marker date="1387824814306" expanded="true" signature="37807:38152" placeholder="..." />
                 <marker date="1387824814306" expanded="false" signature="38865:38878" placeholder="..." />
                 <marker date="1387824814306" expanded="false" signature="39968:39981" placeholder="..." />
                 <marker date="1387824814306" expanded="false" signature="40226:40239" placeholder="..." />
@@ -171,10 +177,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/posts/includes/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="108" selection-end="108" vertical-scroll-proportion="0.16425121" vertical-offset="0" max-vertical-offset="828">
+            <state line="8" column="0" selection-start="108" selection-end="108" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="544">
               <folding />
             </state>
           </provider>
@@ -183,7 +189,7 @@
       <file leaf-file-name="createEventLog.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/posts/scripts/createEventLog.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="41" selection-start="2981" selection-end="2981" vertical-scroll-proportion="0.0" vertical-offset="744" max-vertical-offset="1666">
+            <state line="62" column="1" selection-start="2731" selection-end="2731" vertical-scroll-proportion="0.0" vertical-offset="744" max-vertical-offset="1666">
               <folding />
             </state>
           </provider>
@@ -221,7 +227,6 @@
         <option value="$PROJECT_DIR$/posts/deficiency_view.php" />
         <option value="$PROJECT_DIR$/views/v_enterevent_scrn.php" />
         <option value="$PROJECT_DIR$/SearchEventLog.php" />
-        <option value="$PROJECT_DIR$/views/v_CreateEventLog.php" />
         <option value="$PROJECT_DIR$/views/_v_template.php" />
         <option value="$PROJECT_DIR$/controllers/temp.php" />
         <option value="$PROJECT_DIR$/views/v_deficiency_overview.php" />
@@ -232,6 +237,7 @@
         <option value="$PROJECT_DIR$/posts/scripts/createEventLog.js" />
         <option value="$PROJECT_DIR$/controllers/c_posts.php" />
         <option value="$PROJECT_DIR$/posts/includes/config.php" />
+        <option value="$PROJECT_DIR$/views/v_CreateEventLog.php" />
       </list>
     </option>
   </component>
@@ -534,9 +540,10 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5027747" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297604" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3009605" sideWeight="0.49611542" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3009605" sideWeight="0.4972253" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39844617" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0756396" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -545,7 +552,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.50388455" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -589,7 +595,9 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/controllers/c_users.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="301" column="44" selection-start="9583" selection-end="9583" vertical-scroll-proportion="0.0" vertical-offset="4631" max-vertical-offset="5457" />
+        <state line="301" column="44" selection-start="9583" selection-end="9583" vertical-scroll-proportion="0.0" vertical-offset="4631" max-vertical-offset="5457">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/posts/scripts/jquery-tableSorter/docs/index.html">
@@ -614,23 +622,9 @@
         <state line="80" column="0" selection-start="2477" selection-end="2477" vertical-scroll-proportion="0.7125604" vertical-offset="192" max-vertical-offset="1105" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/v_CreateEventLog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="3" selection-start="1325" selection-end="1407" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="2992">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/v_department.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="0" selection-start="955" selection-end="955" vertical-scroll-proportion="0.2236842" vertical-offset="0" max-vertical-offset="1003" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SearchEventLog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="106" selection-start="4274" selection-end="4274" vertical-scroll-proportion="0.0" vertical-offset="1972" max-vertical-offset="4488">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/posts/includes/getdeficiencies.php">
@@ -716,13 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/posts/scripts/createEventLog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="41" selection-start="2981" selection-end="2981" vertical-scroll-proportion="0.0" vertical-offset="744" max-vertical-offset="1666">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/c_posts.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="239" column="33" selection-start="10436" selection-end="10436" vertical-scroll-proportion="-15.346154" vertical-offset="3664" max-vertical-offset="14246">
@@ -743,6 +730,8 @@
             <marker date="1387824814306" expanded="false" signature="20164:20177" placeholder="..." />
             <marker date="1387824814306" expanded="false" signature="20244:20276" placeholder="..." />
             <marker date="1387824814306" expanded="false" signature="20324:20356" placeholder="..." />
+            <marker date="1387824814306" expanded="true" signature="21026:21419" placeholder="..." />
+            <marker date="1387824814306" expanded="true" signature="23745:24122" placeholder="..." />
             <marker date="1387824814306" expanded="false" signature="26152:26214" placeholder="..." />
             <marker date="1387824814306" expanded="false" signature="34312:34324" placeholder="..." />
             <marker date="1387824814306" expanded="false" signature="34378:34390" placeholder="..." />
@@ -753,6 +742,8 @@
             <marker date="1387824814306" expanded="false" signature="34677:34690" placeholder="..." />
             <marker date="1387824814306" expanded="false" signature="34749:34781" placeholder="..." />
             <marker date="1387824814306" expanded="false" signature="34821:34853" placeholder="..." />
+            <marker date="1387824814306" expanded="true" signature="35405:35750" placeholder="..." />
+            <marker date="1387824814306" expanded="true" signature="37807:38152" placeholder="..." />
             <marker date="1387824814306" expanded="false" signature="38865:38878" placeholder="..." />
             <marker date="1387824814306" expanded="false" signature="39968:39981" placeholder="..." />
             <marker date="1387824814306" expanded="false" signature="40226:40239" placeholder="..." />
@@ -762,8 +753,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/posts/includes/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="108" selection-end="108" vertical-scroll-proportion="0.16425121" vertical-offset="0" max-vertical-offset="828">
+        <state line="8" column="0" selection-start="108" selection-end="108" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="544">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/posts/scripts/createEventLog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="1" selection-start="2731" selection-end="2731" vertical-scroll-proportion="0.0" vertical-offset="744" max-vertical-offset="1666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SearchEventLog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="227" column="35" selection-start="11074" selection-end="11074" vertical-scroll-proportion="-4.6153846" vertical-offset="3586" max-vertical-offset="4335">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/v_CreateEventLog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="218" selection-end="314" vertical-scroll-proportion="0.23480663" vertical-offset="0" max-vertical-offset="2992">
+          <folding>
+            <marker date="1387826045683" expanded="false" signature="4972:5019" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

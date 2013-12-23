@@ -1,7 +1,7 @@
 
 <div style="width: 100%; position: absolute; z-index: 100; margin: 5px 0px 0px 0px;" id="notificationDiv">
-    <div class="error-note-bar">
-        <p>An error has occurred and it has been reported. We apologize...</p>
+    <div class="success-note-bar">
+        <p>New event entry has been created..Click Return!.</p>
     </div>
     <div class="success-note-bar">
         <p>New event entry has been created...</p>
