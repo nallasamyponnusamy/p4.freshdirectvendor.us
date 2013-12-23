@@ -164,7 +164,7 @@ class posts_controller extends base_controller
 
             # Do the insert
             DB::instance(DB_NAME)->insert($DepartmentGroup . 'InspectionLog', $data);
-            $LastInsertID = DB::instance(DB_NAME)->select_field("SELECT max(NonProductionInspectionLogID) FROM nonproductioninspectionlog");
+            $LastInsertID = DB::instance(DB_NAME)->select_field("SELECT max(NonProductionInspectionLogID) FROM NonProductionInspectionLog");
 
             if (!$data) {
                 $isSuccess = 0;
@@ -218,11 +218,11 @@ class posts_controller extends base_controller
                                 );
 
                                 # Do the insert
-                                DB::instance(DB_NAME)->insert($DepartmentGroup . 'deficiencieslog', $data);
+                                DB::instance(DB_NAME)->insert($DepartmentGroup . 'DeficienciesLog', $data);
 
 //                        if (!($sqlCreateNewDeficiencyRecordResults = $db->query($sqlCreateNewDeficiencyRecord)))
 //                        {
-                                $isSuccess = 1;
+//                                $isSuccess = 0;
 //                        }
 //                        break;
 
@@ -242,7 +242,6 @@ class posts_controller extends base_controller
                 // include send email code
                 //include_once( 'export.php' );
             }
-            $isSuccess = 1;
             echo $isSuccess;
 
         }
